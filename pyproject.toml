@@ -1,6 +1,6 @@
 [project]
 name = "litxbench"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Benchmark for Information Extraction From Scientific Literature"
 readme = "README.md"
 requires-python = ">=3.12"
