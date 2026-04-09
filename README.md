@@ -11,7 +11,7 @@ LitXBench is a benchmark to evaluate LLMs on extracting material information syn
 
 # Installation
 
-`uv pip add litxbench`
+`uv pip install litxbench`
 
 # Usage
 

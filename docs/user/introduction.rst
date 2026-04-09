@@ -11,7 +11,7 @@ Installation
 
 .. code-block:: bash
 
-   uv pip add litxbench
+   uv pip install litxbench
 
 Quick Start
 -----------
