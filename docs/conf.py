@@ -30,7 +30,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
-html_title = f"LitXBench v{version} · LitXAlloy v{litxalloy_version}"
+html_title = f"LitXBench v{version} <small style='font-size:0.65em;opacity:0.7'>· LitXAlloy v{litxalloy_version}</small>"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_js_files = ["leaderboard.js"]
