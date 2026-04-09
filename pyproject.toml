@@ -76,6 +76,7 @@ include = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/litxbench"]
+exclude = ["src/litxbench/litxalloy/pdfs/*.pdf"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
