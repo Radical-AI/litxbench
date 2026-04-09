@@ -60,6 +60,15 @@ allow-direct-references = true
 [tool.hatch.build]
 dev-mode-dirs = [".", "src"]
 
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/litxbench/",
+    "tests/",
+    "pyproject.toml",
+    "README.md",
+    "LICENSE",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/litxbench"]
 
