@@ -27,7 +27,7 @@ from litxbench.litxalloy.models import (
     Measurement,
 )
 
-EXTRACTIONS_DIR = Path(resolve_path("src/litxbench/evals/litxalloy/dataset/extractions"))
+EXTRACTIONS_DIR = Path(resolve_path("src/litxbench/litxalloy/extractions"))
 OUTPUT_FILE = Path(resolve_path("ui/public/data/litxalloy_graph.json"))
 
 
