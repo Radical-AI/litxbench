@@ -1,0 +1,176 @@
+/* Full-width landing page: override all Furo layout constraints */
+body:has(.top-nav) .sidebar-drawer {
+  display: none !important;
+}
+
+body:has(.top-nav) .page,
+body:has(.top-nav) .main,
+body:has(.top-nav) .content {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body:has(.top-nav) .article-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2em;
+  overflow-x: hidden;
+}
+
+/* Top navigation bar */
+.top-nav {
+  display: flex;
+  gap: 0.6em;
+  justify-content: center;
+  margin: 1em 0 1.5em;
+}
+
+.top-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.45em 1.4em;
+  border: 1px solid var(--color-foreground-border, #d0d0d0);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--color-foreground-primary);
+  background: var(--color-background-secondary, #f7f7f7);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.top-nav a svg {
+  flex-shrink: 0;
+}
+
+.top-nav a:hover {
+  background: var(--color-background-primary, #fff);
+  color: var(--color-foreground-primary);
+  border-color: var(--color-foreground-muted, #888);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.top-nav a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Academic-style benchmark tables (booktabs) */
+.benchmark-table-wrap {
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.benchmark-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.875em;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.benchmark-table th,
+.benchmark-table td {
+  padding: 0.25em 0.6em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.benchmark-table td:first-child {
+  text-align: left;
+}
+
+.benchmark-table thead {
+  border-top: 2px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+}
+
+.benchmark-table thead tr:first-child th {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.15em;
+}
+
+.benchmark-table thead tr:last-child th {
+  padding-top: 0.15em;
+}
+
+.benchmark-table tbody {
+  border-bottom: 2px solid currentColor;
+}
+
+.benchmark-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.benchmark-table tbody tr:hover {
+  filter: brightness(0.95);
+}
+
+.benchmark-table caption {
+  caption-side: bottom;
+  text-align: left;
+  padding-top: 0.6em;
+  font-size: 0.92em;
+  white-space: normal;
+  color: var(--color-foreground-secondary, #555);
+}
+
+/* Heatmap cells: ensure text is readable in both light and dark modes */
+.benchmark-table td {
+  color: var(--color-foreground-primary);
+}
+
+/* Sortable column headers */
+.benchmark-table thead tr:last-child th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.benchmark-table thead tr:last-child th[data-sort]:hover {
+  text-decoration: underline;
+}
+
+.sort-indicator {
+  font-size: 0.75em;
+}
+
+/* Footer padding on landing page */
+body:has(.top-nav) .bottom-of-page {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+/* Links column */
+.links-cell a {
+  margin-right: 0.4em;
+  font-size: 0.85em;
+}
+
+/* Hide Furo's top-right icons on the landing page so they don't offset centering */
+body:has(.top-nav) .content-icon-container {
+  display: none !important;
+}
+
+/* Center the landing page title and subtitle */
+body:has(.top-nav) .article-container h1 {
+  text-align: center !important;
+}
+body:has(.top-nav) .article-container h1 .headerlink {
+  display: none;
+}
+body:has(.top-nav) .article-container section > p:first-of-type {
+  text-align: center !important;
+}
+
+/* About section: narrower centered column for readability */
+.about-section {
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 0 1em;
+}

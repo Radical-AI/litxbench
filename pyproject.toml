@@ -1,0 +1,64 @@
+[project]
+name = "litxbench"
+version = "0.1.0"
+description = "A Benchmark for Information Extraction From Scientific Literature"
+requires-python = ">=3.12.0, <3.13"
+dependencies = [
+    "pymatgen>=2025.10.7",
+    "pydantic>=2.12.5",
+    "pint>=0.25.2",
+]
+
+
+[dependency-groups]
+dev = [
+    "basedpyright",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-xdist>=3.8.0",
+    "pytest-timeout",
+    "pytest-rerunfailures",
+    "ruff",
+]
+docs = [
+    "sphinx>=7.0",
+    "furo",
+    "sphinx-copybutton",
+    "sphinx-design",
+]
+paper = [
+    "pydantic-ai>=1.39.0",
+    "logfire>=0.4.0",
+    "matplotlib",
+]
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+environments = ["sys_platform == 'darwin'", "sys_platform == 'linux'"]
+
+[tool.ruff.lint.per-file-ignores]
+"examples/usage.py" = ["E402"] # ignore imports not being at the top of file for clarity
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build]
+dev-mode-dirs = [".", "src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/litxbench"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.pyright]
+exclude = ["paper"]
+
+[tool.ruff]
+line-length = 120

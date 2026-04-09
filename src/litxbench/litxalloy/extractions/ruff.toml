@@ -1,0 +1,4 @@
+# We need a custom ruff.toml file since we want the dataset to have a higher line length limit. this is important
+# because having al onger limit allows us to fit more data horizontally and it just looks nicer/easier to read (more data can fit on your screen at once).
+extend = "../../../../pyproject.toml"
+line-length = 320
