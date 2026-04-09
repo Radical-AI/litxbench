@@ -35,9 +35,10 @@ def composition_with_weight_additions(
 ) -> Composition:
     """
     How to interpret this:
+
     1) They weighted out the base composition in the lab
-    2) They added additions_comp to the base composition —
-       the amount added is addition_wt_frac of the base composition's weight
+    2) They added additions_comp to the base composition.
+       The amount added is addition_wt_frac of the base composition's weight.
     """
     original_weight = base.weight
     target_addition_weight = original_weight * addition_wt_frac
