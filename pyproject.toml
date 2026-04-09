@@ -10,6 +10,11 @@ dependencies = [
     "pint>=0.25.2",
 ]
 license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 license-files = ["LICENSE"]
 maintainers = [
     { name="Curtis Chong", email="cchong@radical-ai.com" }
