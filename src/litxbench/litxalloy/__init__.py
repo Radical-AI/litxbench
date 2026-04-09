@@ -1,3 +1,6 @@
+# hardcode version as it's separate from litxbench
+__version__ = "0.1.0"
+
 from litxbench.core.extraction_utils import (  # noqa: F401
     balance_composition,
     composition_with_weight_additions,

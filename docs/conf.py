@@ -1,13 +1,21 @@
 """Sphinx configuration for LitXBench documentation."""
 
+import json
 import os
 import sys
+from pathlib import Path
 
 sys.path.insert(0, os.path.abspath("../src"))
 
 project = "LitXBench"
 copyright = "2026, Radical AI"
 author = "Radical AI"
+
+from importlib.metadata import version as get_version
+
+version = get_version("litxbench")
+
+from litxbench.litxalloy import __version__ as litxalloy_version
 
 extensions = [
     "sphinx.ext.autodoc",
@@ -22,7 +30,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
-html_title = "LitXBench"
+html_title = f"LitXBench v{version} · LitXAlloy v{litxalloy_version}"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_js_files = ["leaderboard.js"]
@@ -75,3 +83,17 @@ html_sidebars = {
         "sidebar/scroll-end.html",
     ],
 }
+
+
+def _write_version_badges(app, exception):
+    """Write shields.io endpoint JSON files into the build output."""
+    if exception is not None:
+        return
+    outdir = Path(app.outdir)
+    for name, ver in [("litxbench", version), ("litxalloy", litxalloy_version)]:
+        badge = {"schemaVersion": 1, "label": name, "message": f"v{ver}", "color": "blue"}
+        (outdir / f"{name}-badge.json").write_text(json.dumps(badge))
+
+
+def setup(app):
+    app.connect("build-finished", _write_version_badges)

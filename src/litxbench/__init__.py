@@ -1,5 +1,9 @@
 """LitXBench: A Benchmark for Information Extraction From Scientific Literature."""
 
+from importlib.metadata import version
+
+__version__ = version("litxbench")
+
 from litxbench.core.enums import (  # noqa: F401
     ConfigTag,
     CrysStruct,
