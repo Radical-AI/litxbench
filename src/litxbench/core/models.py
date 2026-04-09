@@ -435,16 +435,14 @@ class ProcessStep:
     """Structured representation of a process step.
 
     Replaces string notation with structured dataclass for easier validation and manipulation.
-
-    Attributes:
-        base_name: The base name of the process step (e.g., "annealing", "melting")
-        variables: Variable assignments - {"Temp": "800"} for materials, {"Temp": ""} for event templates
-        inputs: Tuple of input names feeding into this step (e.g., raw materials, named materials)
     """
 
     base_name: str
-    variables: dict[str, str]  # {"Temp": "800"} for materials, {"Temp": ""} for event templates
+    """The base name of the process step (e.g., "annealing", "melting")."""
+    variables: dict[str, str]
+    """Variable assignments - ``{"Temp": "800"}`` for materials, ``{"Temp": ""}`` for event templates."""
     inputs: list[str] = field(default_factory=list)
+    """Input names feeding into this step (e.g., raw materials, named materials)."""
 
     @classmethod
     def parse_material_step(cls, step: str, *, inputs: list[str] | None = None) -> "ProcessStep":
@@ -642,19 +640,16 @@ DEFAULT_SYNTHESIS_GROUP_NAME = "default"
 
 @dataclass
 class SynthesisGroup:
-    """Structured representation of a synthesis group with template variables.
-
-    Attributes:
-        name: The full event name (e.g., "annealing[Temp]")
-        base_name: The base name without brackets (e.g., "annealing")
-        template_vars: Set of template variable names (e.g., {"Temp"})
-        process_events: List of process events that may contain template placeholders
-    """
+    """Structured representation of a synthesis group with template variables."""
 
     name: str
+    """The full event name (e.g., "annealing[Temp]")."""
     base_name: str
+    """The base name without brackets (e.g., "annealing")."""
     template_vars: set[str]
+    """Set of template variable names (e.g., {"Temp"})."""
     process_events: list[ProcessEvent]
+    """List of process events that may contain template placeholders."""
 
     @classmethod
     def from_name_and_events(cls, name: str, process_events: list[ProcessEvent]) -> "SynthesisGroup":

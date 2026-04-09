@@ -1,5 +1,8 @@
 # LitXBench
 
+[![PyPI](https://img.shields.io/pypi/v/litxbench?logo=pypi&logoColor=white)](https://pypi.org/project/litxbench)
+[![LitXAlloy](https://img.shields.io/endpoint?url=https://radical-ai.github.io/litxbench/litxalloy-badge.json)](https://radical-ai.github.io/litxbench)
+
 LitXBench is a benchmark to evaluate LLMs on extracting material information synthesized in research papers. Read the preprint here.
 
 <p align="center">

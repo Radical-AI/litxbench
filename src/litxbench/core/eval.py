@@ -36,19 +36,14 @@ class MaterialWithContext:
 
 @dataclass
 class ComparableItem:
-    """Wrapper that normalizes different measurement types for unified matching.
-
-    Attributes:
-        type: One of "measurement", "composition", "lattice", "struct", "phase_fraction".
-        item: The underlying object (Measurement, CompMeasurement, LatticeMeasurement,
-              CrysStruct, or Quantity).
-        context: Optional scope tag (e.g. Configuration name or GlobalLatticeParam name)
-                 so that items from different scopes are never matched together.
-    """
+    """Wrapper that normalizes different measurement types for unified matching."""
 
     type: str
+    """One of "measurement", "composition", "lattice", "struct", "phase_fraction"."""
     item: Any
+    """The underlying object (Measurement, CompMeasurement, LatticeMeasurement, CrysStruct, or Quantity)."""
     context: str | None = None
+    """Optional scope tag (e.g. Configuration name or GlobalLatticeParam name) so that items from different scopes are never matched together."""
 
 
 @dataclass
