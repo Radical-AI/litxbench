@@ -23,6 +23,10 @@ ui:
 graph:
     uv run python scripts/ast_to_graph.py
 
+# Run tests
+test *args:
+    uv run pytest {{args}}
+
 # Clean build artifacts
 clean:
     rm -rf docs/_build ui/out ui/.next /tmp/litxbench-preview

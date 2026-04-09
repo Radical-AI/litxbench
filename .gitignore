@@ -2,6 +2,11 @@ node_modules
 .venv
 .DS_Store
 __pycache__/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
 scripts/paper/MPEA_dataset.csv
 outputs
 scripts/paper/pareto_front.pdf

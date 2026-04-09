@@ -1,3 +1,6 @@
+import urllib.request
+from pathlib import Path
+
 # hardcode version as it's separate from LitXBench
 __version__ = "0.1.0"
 
@@ -53,3 +56,30 @@ papers: dict[str, list[Experiment]] = {
     "doi_10_3390__met9030351": doi_10_3390__met9030351.experiments,
     "doi_10_3390__met10111466": doi_10_3390__met10111466.experiments,
 }
+
+_BASE_URL = "https://raw.githubusercontent.com/Radical-AI/litxbench/main/src/litxbench/litxalloy/pdfs"
+
+
+def download_pdf(doi_name: str) -> Path:
+    """Download a single PDF from GitHub by DOI name.
+
+    Args:
+        doi_name: DOI name, e.g. "doi_10_3390__e21020122"
+
+    Returns:
+        Path to the downloaded (or already existing) PDF file.
+    """
+    from litxbench.core.utils import resolve_doi_path
+
+    dest = Path(resolve_doi_path(doi_name))
+    if dest.exists():
+        return dest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    url = f"{_BASE_URL}/{doi_name}.pdf"
+    urllib.request.urlretrieve(url, dest)
+    return dest
+
+
+def download_all_pdfs() -> list[Path]:
+    """Download all benchmark PDFs from GitHub."""
+    return [download_pdf(name) for name in papers]

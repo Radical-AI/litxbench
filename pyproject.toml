@@ -1,24 +1,34 @@
 [project]
 name = "litxbench"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Benchmark for Information Extraction From Scientific Literature"
-requires-python = ">=3.12.0, <3.13"
+readme = "README.md"
+requires-python = ">=3.12"
 dependencies = [
     "pymatgen>=2025.10.7",
     "pydantic>=2.12.5",
     "pint>=0.25.2",
 ]
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license-files = ["LICENSE"]
+maintainers = [
+    { name="Curtis Chong", email="cchong@radical-ai.com" }
+]
 
+[project.urls]
+Homepage = "https://radical-ai.github.io/litxbench"
+Issues = "https://github.com/Radical-AI/litxbench/issues"
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
-    "basedpyright",
-    "pytest",
-    "pytest-asyncio",
-    "pytest-xdist>=3.8.0",
-    "pytest-timeout",
-    "pytest-rerunfailures",
-    "ruff",
+    "prek>=0.3.4",
+    "pytest>=8",
+    "ruff>=0.14",
 ]
 docs = [
     "sphinx>=7.0",
@@ -51,11 +61,23 @@ allow-direct-references = true
 [tool.hatch.build]
 dev-mode-dirs = [".", "src"]
 
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/litxbench/",
+    "tests/",
+    "pyproject.toml",
+    "README.md",
+    "LICENSE",
+]
+exclude = ["src/litxbench/litxalloy/pdfs/*.pdf"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/litxbench"]
+exclude = ["src/litxbench/litxalloy/pdfs/*.pdf"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+testpaths = ["tests"]
 
 [tool.pyright]
 exclude = ["paper"]

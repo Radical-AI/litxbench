@@ -18,7 +18,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --extra dev
 
       - name: Ruff check (import sorting)
         run: uv run ruff check --select I .
