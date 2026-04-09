@@ -1,0 +1,11 @@
+method	process_f1
+KnowMat2	0.6592 +/- 0.6302
+Claude Haiku 4.5	0.8426 +/- 0.0586
+GPT 5 Mini Medium	0.8422 +/- 0.0698
+Gemini 3 Flash	0.8560 +/- 0.0197
+Claude Opus 4.6	0.8611 +/- 0.0190
+GPT 5.2 High	0.8541 +/- 0.0265
+Gemini 3.1 Pro	0.8343 +/- 0.0777
+Claude Code (Opus 4.6)	0.8763 +/- 0.0058
+Codex (GPT 5.2 Codex High)	0.8234 +/- 0.0286
+Gemini CLI (Gemini-3.1 Pro Preview)	0.8354 +/- 0.0442

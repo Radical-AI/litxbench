@@ -1,0 +1,7 @@
+model_name	overall_precision	overall_recall	overall_f1	avg_attempts
+claude-haiku-4-5	0.7470	0.7759	0.7545	1.95
+gpt-5-mini-medium	0.7321	0.7768	0.7464	2.21
+gemini-3-flash	0.8881	0.8828	0.8800	1.58
+claude-opus-4-6	0.8647	0.8945	0.8722	1.42
+gpt-5-2-high	0.8258	0.8923	0.8518	1.53
+gemini-3.1-pro	0.9157	0.9356	0.9195	1.79

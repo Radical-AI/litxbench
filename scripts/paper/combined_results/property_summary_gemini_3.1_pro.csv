@@ -1,0 +1,6 @@
+property	precision	recall	f1	cost_usd
+ultimate_tensile_strength	0.8333	1.0000	0.9091 +/- 0.0000	0.628664
+ultimate_compressive_strength	0.8400	1.0000	0.9130 +/- 0.0000	0.61298
+fracture_strain_tension	0.8543	0.9583	0.9027 +/- 0.0777	0.66435
+fracture_strain_compression	0.8182	0.9474	0.8780 +/- 0.0000	0.596374
+vickers_hardness	0.9596	0.9314	0.9453 +/- 0.0427	0.623312
