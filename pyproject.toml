@@ -73,6 +73,7 @@ include = [
     "README.md",
     "LICENSE",
 ]
+exclude = ["src/litxbench/litxalloy/pdfs/*.pdf"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/litxbench"]
