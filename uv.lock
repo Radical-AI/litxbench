@@ -1464,6 +1464,7 @@ docs = [
     { name = "sphinx-design", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
 ]
 paper = [
+    { name = "genai-prices", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "logfire", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "matplotlib", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
     { name = "pydantic-ai", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
@@ -1472,6 +1473,7 @@ paper = [
 [package.metadata]
 requires-dist = [
     { name = "furo", marker = "extra == 'docs'" },
+    { name = "genai-prices", marker = "extra == 'paper'" },
     { name = "logfire", marker = "extra == 'paper'", specifier = ">=0.4.0" },
     { name = "matplotlib", marker = "extra == 'paper'" },
     { name = "pint", specifier = ">=0.25.2" },

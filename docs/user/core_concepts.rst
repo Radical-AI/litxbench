@@ -104,7 +104,7 @@ Measurements
 
 Measurements capture numeric properties of a material.
 
-- **Measurement** -- a generic numeric measurement with a ``MeasurementKind``, value, optional
+- **Measurement** -- a generic numeric measurement with a ``kind`` string (e.g. ``AlloyMeasurementKind``), value, optional
   `Pint <https://pint.readthedocs.io/>`_ unit, optional uncertainty, and optional
   ``MeasurementMethod`` (the instrument/technique used).
 - **CompMeasurement** -- chemical composition via pymatgen's ``Composition``

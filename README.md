@@ -135,7 +135,7 @@ A complete end-to-end example is available at [`examples/usage.py`](examples/usa
 
 # Paper Evaluation Scripts Warning
 
-For the evaluation scripts used in the paper, LitXBench intructs LLMs to format the extracted materials as code. This code is run by LitXBench via Python `exec`. Do NOT call untrusted LLMs as they may generate untrusted code which could be executed on your machine.
+For the evaluation scripts used in the paper, LitXBench instructs LLMs to format the extracted materials as code. This code is run by LitXBench via Python `exec`. Do NOT call untrusted LLMs as they may generate untrusted code which could be executed on your machine.
 
 # Citation
 

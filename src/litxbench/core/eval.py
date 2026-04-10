@@ -542,9 +542,32 @@ def _compare_process_event_values(target_evt: ProcessEvent, extracted_evt: Proce
 # ---------------------------------------------------------------------------
 
 
-def _units_equal(a: pint.Unit, b: pint.Unit) -> bool:
-    """Check if two pint units are equivalent."""
-    return a == b
+def _units_compatible(a: pint.Unit, b: pint.Unit) -> bool:
+    """Check if two pint units are dimensionally compatible."""
+    try:
+        return a.is_compatible_with(b)
+    except Exception:
+        return a == b
+
+
+def _values_match(
+    a_value: float | None, a_unit: pint.Unit, b_value: float | None, b_unit: pint.Unit, tol: float = 1e-6
+) -> bool:
+    """Check if two value+unit pairs represent the same physical quantity.
+
+    Handles unit conversion (e.g. 1000 MPa == 1 GPa). Both values must be provided.
+    """
+    if a_value is not None and b_value is not None:
+        if not _units_compatible(a_unit, b_unit):
+            return False
+        try:
+            converted = ureg.Quantity(b_value, b_unit).to(a_unit).magnitude
+        except Exception:
+            return False
+        return abs(a_value - converted) <= tol
+    elif a_value != b_value:  # one is None, other isn't
+        return False
+    raise ValueError("_values_match should not be called when both values are None")
 
 
 _CONTEXT_PUNCT_RE = re.compile(r"[()[\],:/+]")
@@ -738,15 +761,10 @@ def measurement_score(a: Measurement[Any], b: Measurement[Any]) -> float:
     if kind_score == 0.0:
         return 0.0
 
-    # numeric value
-    if a.numeric_value is not None and b.numeric_value is not None:
-        if abs(a.numeric_value - b.numeric_value) > 1e-6:
-            return 0.0
-    elif a.numeric_value != b.numeric_value:  # one is None, other isn't
-        return 0.0
-
-    # unit
-    if not _units_equal(a.unit, b.unit):
+    # numeric value + unit (checked together to handle unit conversion)
+    if a.numeric_value is None and b.numeric_value is None:
+        pass  # both missing numeric values — skip value/unit check
+    elif not _values_match(a.numeric_value, a.unit, b.numeric_value, b.unit):
         return 0.0
 
     # Blend qualifier with condition matching
@@ -810,12 +828,9 @@ def _quantity_score(a: Quantity, b: Quantity) -> float:
     """
     if not isinstance(a, Quantity) or not isinstance(b, Quantity):
         return 0.0
-    if a.numeric_value is not None and b.numeric_value is not None:
-        if abs(a.numeric_value - b.numeric_value) > 1e-6:
-            return 0.0
-    elif a.numeric_value != b.numeric_value:
-        return 0.0
-    if not _units_equal(a.unit, b.unit):
+    if a.numeric_value is None and b.numeric_value is None:
+        pass  # both missing — skip value/unit check
+    elif not _values_match(a.numeric_value, a.unit, b.numeric_value, b.unit):
         return 0.0
     return _qualifier_compatibility(a.value_qualifier, b.value_qualifier)
 
@@ -888,7 +903,7 @@ def match_comparable_items(
 
     Builds a score matrix and uses ``linear_sum_assignment`` to find the
     optimal matching that maximises total score.  Only pairs with
-    score >= MIN_ITEM_MATCH_SCORE are kept.
+    score > MIN_ITEM_MATCH_SCORE are kept.
     """
     n_target = len(target_items)
     n_extracted = len(extracted_items)

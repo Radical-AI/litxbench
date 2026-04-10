@@ -18,11 +18,13 @@ from litxbench.core.eval import (  # noqa: F401
 from litxbench.core.extraction_utils import (  # noqa: F401
     balance_composition,
     composition_with_weight_additions,
+    normalize,
 )
 from litxbench.core.models import (  # noqa: F401
     CompMeasurement,
     Configuration,
     Experiment,
+    GlobalLatticeParam,
     Material,
     Measurement,
     ProcessEvent,

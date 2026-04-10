@@ -41,6 +41,7 @@ paper = [
     "pydantic-ai>=1.39.0",
     "logfire>=0.4.0",
     "matplotlib",
+    "genai-prices",
 ]
 
 [build-system]

@@ -108,7 +108,8 @@ as a single logical measurement.
 
 .. code-block:: python
 
-   from litxbench import Measurement, CoreMeasurementValue, MeasurementStatistic
+   from litxbench import Measurement
+   from litxbench.core.models import CoreMeasurementValue, MeasurementStatistic
 
    *Measurement.group_measurements(
        kind=PhaseMeasurementKind.phase_size,

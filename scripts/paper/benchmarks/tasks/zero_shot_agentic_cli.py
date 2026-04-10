@@ -457,7 +457,7 @@ def _read_run_count(sandbox_dir: Path) -> int:
     try:
         return int(counter_file.read_text().strip())
     except (FileNotFoundError, ValueError, OSError):
-        return 1
+        return 0
 
 
 def _extract_and_format_single_doi_agentic_cli(

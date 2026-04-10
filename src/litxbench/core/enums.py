@@ -132,7 +132,7 @@ class ProcessKind(str, Enum):
 
     CastingUnspecified = "Casting Unspecified"
     AsCast = "As Cast"
-    GravityCasting = "Gravity Casting"  # aka die casting
+    GravityCasting = "Gravity Casting"
     DropCasting = "Drop Casting"
     SuctionCasting = "Suction Casting"
     DirectionalSolidification = "Directional Solidification"

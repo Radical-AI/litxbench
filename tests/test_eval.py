@@ -38,6 +38,7 @@ from litxbench.core.eval import (
     _qualifier_compatibility,
     _quantity_score,
     _split_kind_to_words,
+    _values_match,
     align_process_events,
     compute_multi_level_metrics,
     match_comparable_items,
@@ -56,7 +57,7 @@ from litxbench.core.models import (
     Quantity,
     SynthesisGroup,
 )
-from litxbench.core.units import Celsius, MegaPascal, dimensionless, percent
+from litxbench.core.units import Celsius, GigaPascal, Kelvin, MegaPascal, Micrometer, Millimeter, dimensionless, percent
 
 
 @dataclass
@@ -528,6 +529,35 @@ class TestLatticeMatched:
         la = PymatgenLattice.from_parameters(3.6, 3.6, 3.6, 90, 90, 90)
         lb = PymatgenLattice.from_parameters(3.62, 3.6, 3.6, 90, 90, 90)
         assert not _lattice_matched(la, lb)
+
+
+class TestValuesMatch:
+    @pytest.mark.parametrize("a_val, a_unit, b_val, b_unit, expected", [
+        # same unit
+        (100.0, MegaPascal, 100.0, MegaPascal, True),
+        (100.0, MegaPascal, 200.0, MegaPascal, False),
+        # unit conversion
+        (1000.0, MegaPascal, 1.0, GigaPascal, True),
+        (1.0, GigaPascal, 1000.0, MegaPascal, True),
+        (500.0, MegaPascal, 1.0, GigaPascal, False),
+        (1.0, Millimeter, 1000.0, Micrometer, True),
+        (0.0, Celsius, 273.15, Kelvin, True),
+        # incompatible units
+        (100.0, MegaPascal, 100.0, Millimeter, False),
+        # one None
+        (None, MegaPascal, 100.0, MegaPascal, False),
+        (100.0, MegaPascal, None, MegaPascal, False),
+    ])
+    def test_values_match(self, a_val, a_unit, b_val, b_unit, expected):
+        assert _values_match(a_val, a_unit, b_val, b_unit) is expected
+
+    def test_exactly_at_tolerance(self):
+        assert _values_match(1.0, MegaPascal, 1.0 + 1e-6, MegaPascal) is True
+        assert _values_match(1.0, MegaPascal, 1.0 + 2e-6, MegaPascal) is False
+
+    def test_both_none_raises(self):
+        with pytest.raises(ValueError, match="should not be called"):
+            _values_match(None, MegaPascal, None, GigaPascal)
 
 
 class TestQuantityMatched:
