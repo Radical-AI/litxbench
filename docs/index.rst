@@ -62,10 +62,10 @@ LitXBench
      </tr>
      <tr>
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot_agentic_cli.py">Claude Code (Opus 4.6)</a></td>
-       <td>0.80</td>
+       <td>0.81</td>
        <td>0.77</td>
-       <td>0.78 &plusmn; 0.00</td>
-       <td>0.70</td>
+       <td>0.78 &plusmn; 0.01</td>
+       <td>0.71</td>
        <td>0.88</td>
        <td>0.94</td>
        <td>0.56</td>
@@ -79,7 +79,7 @@ LitXBench
        <td>0.79</td>
        <td>0.77</td>
        <td>0.77 &plusmn; 0.03</td>
-       <td>0.70</td>
+       <td>0.71</td>
        <td>0.83</td>
        <td>0.96</td>
        <td>0.60</td>
@@ -103,25 +103,11 @@ LitXBench
        <td>0.1.1</td>
      </tr>
      <tr>
-       <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">Claude Opus 4.6</a></td>
-       <td>0.74</td>
-       <td>0.72</td>
-       <td>0.72 &plusmn; 0.04</td>
-       <td>0.61</td>
-       <td>0.86</td>
-       <td>0.91</td>
-       <td>0.54</td>
-       <td>1.53</td>
-       <td>5.37</td>
-       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1hLahFPqZLsAGYkdD9Q3kYcZSGA5IoDNm/view">run</a> <a href="https://www.anthropic.com/news/claude-opus-4-6">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
-       <td>0.1.1</td>
-     </tr>
-     <tr>
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">GPT-5.2 High</a></td>
-       <td>0.70</td>
+       <td>0.71</td>
        <td>0.77</td>
-       <td>0.72 &plusmn; 0.02</td>
-       <td>0.64</td>
+       <td>0.73 &plusmn; 0.02</td>
+       <td>0.65</td>
        <td>0.85</td>
        <td>0.97</td>
        <td>0.49</td>
@@ -134,8 +120,8 @@ LitXBench
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot_agentic_cli.py">Codex (GPT-5.2 Codex High)</a></td>
        <td>0.76</td>
        <td>0.72</td>
-       <td>0.72 &plusmn; 0.01</td>
-       <td>0.66</td>
+       <td>0.73 &plusmn; 0.01</td>
+       <td>0.67</td>
        <td>0.82</td>
        <td>0.95</td>
        <td>0.52</td>
@@ -145,11 +131,25 @@ LitXBench
        <td>0.1.1</td>
      </tr>
      <tr>
+       <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">Claude Opus 4.6</a></td>
+       <td>0.75</td>
+       <td>0.73</td>
+       <td>0.72 &plusmn; 0.04</td>
+       <td>0.62</td>
+       <td>0.86</td>
+       <td>0.91</td>
+       <td>0.54</td>
+       <td>1.53</td>
+       <td>5.37</td>
+       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1hLahFPqZLsAGYkdD9Q3kYcZSGA5IoDNm/view">run</a> <a href="https://www.anthropic.com/news/claude-opus-4-6">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
+       <td>0.1.1</td>
+     </tr>
+     <tr>
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">GPT-5 Mini Medium</a></td>
        <td>0.67</td>
        <td>0.70</td>
-       <td>0.67 &plusmn; 0.04</td>
-       <td>0.51</td>
+       <td>0.68 &plusmn; 0.04</td>
+       <td>0.52</td>
        <td>0.84</td>
        <td>0.94</td>
        <td>0.41</td>
@@ -161,9 +161,9 @@ LitXBench
      <tr>
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">Claude Haiku 4.5</a></td>
        <td>0.64</td>
-       <td>0.68</td>
+       <td>0.69</td>
        <td>0.65 &plusmn; 0.01</td>
-       <td>0.50</td>
+       <td>0.51</td>
        <td>0.84</td>
        <td>0.94</td>
        <td>0.38</td>
