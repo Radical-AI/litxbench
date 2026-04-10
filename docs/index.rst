@@ -47,6 +47,20 @@ LitXBench
    </thead>
    <tbody>
      <tr>
+       <td><a href="https://github.com/your-username/your-repo">Example Submission (Your Model Here)</a></td>
+       <td>0.85</td>
+       <td>0.86</td>
+       <td>0.85 &plusmn; 0.03</td>
+       <td>0.80</td>
+       <td>0.90</td>
+       <td>0.99</td>
+       <td>0.72</td>
+       <td>1.50</td>
+       <td>5.00</td>
+       <td class="links-cell"><a href="https://github.com/your-username/your-repo">code</a> <a href="https://example.com/your-run-results">run</a> <a href="https://example.com/your-paper">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/5">pr</a></td>
+       <td>0.1.1</td>
+     </tr>
+     <tr>
        <td><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot_agentic_cli.py">Gemini CLI (3.1 Pro Preview)</a></td>
        <td>0.80</td>
        <td>0.81</td>
