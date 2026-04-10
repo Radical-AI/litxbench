@@ -150,12 +150,12 @@ Enumerations
 
 LitXBench uses canonical values (represented by enums) to ensure consistency.
 
-- ``ProcessKind`` -- 40+ synthesis and processing steps (milling, melting, sintering, annealing, etc.)
+- ``ProcessKind`` -- 38 synthesis and processing steps (milling, melting, sintering, annealing, etc.)
 - ``MeasurementMethod`` -- instruments and techniques (XRD, SEM, TEM, EDS, etc.)
 - ``CrysStruct`` -- crystal structures (FCC, BCC, HCP, L12, B2, etc.)
 - ``ConfigTag`` -- microstructural features (dendrite, matrix, precipitate, twin, etc.)
 - ``RawMaterialKind`` -- feedstock forms (powder, ingot, plate)
-- ``AlloyMeasurementKind`` -- 80+ alloy-specific properties (hardness, yield strength, density, etc.)
+- ``AlloyMeasurementKind`` -- 32 alloy-specific properties (hardness, yield strength, density, etc.)
 
 See :doc:`/api/enums` for the full listing.
 

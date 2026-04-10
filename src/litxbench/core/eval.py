@@ -537,8 +537,9 @@ def _compare_process_event_values(target_evt: ProcessEvent, extracted_evt: Proce
 # ---------------------------------------------------------------------------
 
 
-def _normalize_unit(unit: pint.Unit) -> str:
-    return str(unit)
+def _units_equal(a: pint.Unit, b: pint.Unit) -> bool:
+    """Check if two pint units are equivalent."""
+    return a == b
 
 
 _CONTEXT_PUNCT_RE = re.compile(r"[()[\],:/+]")
@@ -740,7 +741,7 @@ def measurement_score(a: Measurement[Any], b: Measurement[Any]) -> float:
         return 0.0
 
     # unit
-    if _normalize_unit(a.unit) != _normalize_unit(b.unit):
+    if not _units_equal(a.unit, b.unit):
         return 0.0
 
     # Blend qualifier with condition matching
@@ -809,7 +810,7 @@ def _quantity_score(a: Quantity, b: Quantity) -> float:
             return 0.0
     elif a.numeric_value != b.numeric_value:
         return 0.0
-    if _normalize_unit(a.unit) != _normalize_unit(b.unit):
+    if not _units_equal(a.unit, b.unit):
         return 0.0
     return _qualifier_compatibility(a.value_qualifier, b.value_qualifier)
 
@@ -847,31 +848,57 @@ def match_comparable_items(
     target_items: list[ComparableItem],
     extracted_items: list[ComparableItem],
 ) -> MeasurementMatchResult:
-    """Match comparable items between two lists using best-score greedy matching.
+    """Match comparable items between two lists using Hungarian assignment.
 
-    For each target item, finds the highest-scoring unmatched extracted item.
-    Only matches if score >= MIN_ITEM_MATCH_SCORE.
+    Builds a score matrix and uses ``linear_sum_assignment`` to find the
+    optimal matching that maximises total score.  Only pairs with
+    score >= MIN_ITEM_MATCH_SCORE are kept.
     """
-    used_b = [False] * len(extracted_items)
+    n_target = len(target_items)
+    n_extracted = len(extracted_items)
+
+    if n_target == 0:
+        return MeasurementMatchResult(
+            matched_pairs=[],
+            unmatched_target=[],
+            unmatched_extracted=list(extracted_items),
+        )
+    if n_extracted == 0:
+        return MeasurementMatchResult(
+            matched_pairs=[],
+            unmatched_target=list(target_items),
+            unmatched_extracted=[],
+        )
+
+    # Build score matrix and convert to cost for minimisation.
+    size = max(n_target, n_extracted)
+    score_matrix: dict[tuple[int, int], float] = {}
+    cost_matrix = [[0.0] * size for _ in range(size)]
+
+    for i in range(n_target):
+        for j in range(n_extracted):
+            score = _comparable_item_score(target_items[i], extracted_items[j])
+            score_matrix[(i, j)] = score
+            # Hungarian minimises cost, so negate scores.  Padding cells
+            # stay at 0.0 (equivalent to unmatched).
+            cost_matrix[i][j] = -score
+
+    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+
     matched_pairs: list[tuple[ComparableItem, ComparableItem, float]] = []
-    unmatched_target: list[ComparableItem] = []
+    matched_target_indices: set[int] = set()
+    matched_extracted_indices: set[int] = set()
 
-    for a in target_items:
-        best_j = -1
-        best_score = 0.0
-        for j, b in enumerate(extracted_items):
-            if not used_b[j]:
-                score = _comparable_item_score(a, b)
-                if score > best_score:
-                    best_score = score
-                    best_j = j
-        if best_j >= 0 and best_score >= MIN_ITEM_MATCH_SCORE:
-            used_b[best_j] = True
-            matched_pairs.append((a, extracted_items[best_j], best_score))
-        else:
-            unmatched_target.append(a)
+    for r, c in zip(row_ind, col_ind):
+        if r < n_target and c < n_extracted:
+            score = score_matrix[(r, c)]
+            if score >= MIN_ITEM_MATCH_SCORE:
+                matched_pairs.append((target_items[r], extracted_items[c], score))
+                matched_target_indices.add(r)
+                matched_extracted_indices.add(c)
 
-    unmatched_extracted = [b for j, b in enumerate(extracted_items) if not used_b[j]]
+    unmatched_target = [target_items[i] for i in range(n_target) if i not in matched_target_indices]
+    unmatched_extracted = [extracted_items[j] for j in range(n_extracted) if j not in matched_extracted_indices]
 
     return MeasurementMatchResult(
         matched_pairs=matched_pairs,

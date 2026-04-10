@@ -209,8 +209,10 @@ class Measurement(NumericQualifierMixin, Generic[MeasurementMethodT]):
         pressure: Quantity | None = None,  # all must share the same pressure
         source: str | None = None,
         group_name: str | None = None,  # all must share the same group name
-        values: list[CoreMeasurementValue] = field(default_factory=list),
+        values: list[CoreMeasurementValue] | None = None,
     ) -> list[Measurement[MeasurementMethodT]] | list[Measurement[Any]]:
+        if values is None:
+            values = []
         measurements = []
         if len(values) < 2:
             raise ValueError("At least two values must be provided")
