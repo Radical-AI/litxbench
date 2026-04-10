@@ -79,7 +79,7 @@ Synthesis Groups & Template Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Synthesis groups define reusable process sequences. Template variables in brackets
-(e.g. ``[Duration]``, ``[Temp]``) are substituted per-material via the process string.
+(e.g. ``[Temp]``) are substituted per-material via the process string.
 This reduces annotator error by maximizing code reuse across materials that differ only
 by slight experimental parameters.
 

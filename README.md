@@ -17,7 +17,7 @@ LitXBench is a benchmark to evaluate LLMs on extracting material information syn
 
 ## Loading Ground Truth
 
-LitXBench ships with annotated ground-truth extractions. The `litxalloy` dataset contains 19 papers on high-entropy alloys.
+LitXBench ships with annotated ground-truth extractions. The `litxalloy` dataset contains 19 papers on alloys.
 
 ```python
 from litxbench.litxalloy import papers
