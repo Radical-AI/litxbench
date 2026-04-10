@@ -109,12 +109,24 @@ export default function DetailsSidebar({ selected }: DetailsSidebarProps) {
   if (selected.kind === "node") {
     const data = selected.data;
     const lines = lineStr(data.start_line, data.end_line);
+    const hasDistinctName = data.name && data.name !== data.label;
 
     return (
       <div className="overflow-y-auto border-l border-[#30363d] bg-[#161b22] p-4">
-        <h2 className="mb-3 border-b border-[#30363d] pb-2 text-sm font-semibold text-[#e6edf3]">
-          {data.label}
-        </h2>
+        {hasDistinctName ? (
+          <div className="mb-3 border-b border-[#30363d] pb-2">
+            <h2 className="text-sm font-semibold text-[#e6edf3]">
+              {data.name}
+            </h2>
+            <div className="mt-0.5 text-xs text-[#8b949e]">
+              {data.label}
+            </div>
+          </div>
+        ) : (
+          <h2 className="mb-3 border-b border-[#30363d] pb-2 text-sm font-semibold text-[#e6edf3]">
+            {data.label}
+          </h2>
+        )}
 
         {/* Measurements */}
         {data.measurements && data.measurements.length > 0 && (
