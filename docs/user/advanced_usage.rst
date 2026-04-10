@@ -1,9 +1,8 @@
-Building Extractions
-====================
+Advanced Usage
+==============
 
-This page covers the details of building ``Experiment`` objects, including how to
-specify inputs to synthesis groups (mixing materials together) and how to use
-``group_measurements`` for reporting related measurement values.
+This page covers additional details for building ``Experiment`` objects, such as
+specifying inputs to synthesis groups and grouping related measurement values.
 
 Specifying Inputs
 -----------------

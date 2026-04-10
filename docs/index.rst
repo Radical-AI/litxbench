@@ -233,9 +233,9 @@ LitXBench
 
    user/introduction
    user/core_concepts
-   user/building_extractions
    user/evaluation
    user/dataset
+   user/advanced_usage
 
 .. toctree::
    :maxdepth: 2
