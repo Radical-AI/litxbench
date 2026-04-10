@@ -290,6 +290,11 @@ def _levenshtein_dp(
     return dp
 
 
+# TODO: In a future version of LitXAlloy we need to also consider
+# how input materials affect the score.
+# This is a nontrivial consideration as we need to first construct
+# the forest of all the materials. Then similar to how we calculate
+# the Configurations score, we need to identify the graph Markov equivalence.
 def align_process_events(
     target_events: Sequence[ProcessEvent],
     extracted_events: Sequence[ProcessEvent],
