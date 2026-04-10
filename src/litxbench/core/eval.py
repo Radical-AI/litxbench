@@ -844,6 +844,37 @@ def _comparable_item_score(a: ComparableItem, b: ComparableItem) -> float:
     return context_score * item_score
 
 
+def _hungarian_match(
+    cost_matrix: list[list[float]],
+    n_rows: int,
+    n_cols: int,
+    max_cost: float,
+) -> tuple[list[tuple[int, int, float]], list[int], list[int]]:
+    """Run Hungarian algorithm and return matched/unmatched indices.
+
+    Pairs with ``cost_matrix[r][c] < max_cost`` are considered matched.
+
+    Returns ``(matched, unmatched_rows, unmatched_cols)`` where *matched*
+    entries are ``(row_idx, col_idx, cost)``.
+    """
+    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+
+    matched: list[tuple[int, int, float]] = []
+    matched_row_set: set[int] = set()
+    matched_col_set: set[int] = set()
+
+    for r, c in zip(row_ind, col_ind):
+        if r < n_rows and c < n_cols and cost_matrix[r][c] < max_cost:
+            matched.append((r, c, cost_matrix[r][c]))
+            matched_row_set.add(r)
+            matched_col_set.add(c)
+
+    unmatched_rows = [i for i in range(n_rows) if i not in matched_row_set]
+    unmatched_cols = [j for j in range(n_cols) if j not in matched_col_set]
+
+    return matched, unmatched_rows, unmatched_cols
+
+
 def match_comparable_items(
     target_items: list[ComparableItem],
     extracted_items: list[ComparableItem],
@@ -870,40 +901,23 @@ def match_comparable_items(
             unmatched_extracted=[],
         )
 
-    # Build score matrix and convert to cost for minimisation.
+    # Build cost matrix (negated scores) for minimisation.
+    # Padding cells stay at 0.0 (equivalent to unmatched).
     size = max(n_target, n_extracted)
-    score_matrix: dict[tuple[int, int], float] = {}
     cost_matrix = [[0.0] * size for _ in range(size)]
 
     for i in range(n_target):
         for j in range(n_extracted):
-            score = _comparable_item_score(target_items[i], extracted_items[j])
-            score_matrix[(i, j)] = score
-            # Hungarian minimises cost, so negate scores.  Padding cells
-            # stay at 0.0 (equivalent to unmatched).
-            cost_matrix[i][j] = -score
+            cost_matrix[i][j] = -_comparable_item_score(target_items[i], extracted_items[j])
 
-    row_ind, col_ind = linear_sum_assignment(cost_matrix)
-
-    matched_pairs: list[tuple[ComparableItem, ComparableItem, float]] = []
-    matched_target_indices: set[int] = set()
-    matched_extracted_indices: set[int] = set()
-
-    for r, c in zip(row_ind, col_ind):
-        if r < n_target and c < n_extracted:
-            score = score_matrix[(r, c)]
-            if score >= MIN_ITEM_MATCH_SCORE:
-                matched_pairs.append((target_items[r], extracted_items[c], score))
-                matched_target_indices.add(r)
-                matched_extracted_indices.add(c)
-
-    unmatched_target = [target_items[i] for i in range(n_target) if i not in matched_target_indices]
-    unmatched_extracted = [extracted_items[j] for j in range(n_extracted) if j not in matched_extracted_indices]
+    matched, unmatched_row_ids, unmatched_col_ids = _hungarian_match(
+        cost_matrix, n_target, n_extracted, max_cost=-MIN_ITEM_MATCH_SCORE,
+    )
 
     return MeasurementMatchResult(
-        matched_pairs=matched_pairs,
-        unmatched_target=unmatched_target,
-        unmatched_extracted=unmatched_extracted,
+        matched_pairs=[(target_items[r], extracted_items[c], -cost) for r, c, cost in matched],
+        unmatched_target=[target_items[i] for i in unmatched_row_ids],
+        unmatched_extracted=[extracted_items[j] for j in unmatched_col_ids],
     )
 
 
@@ -1196,37 +1210,31 @@ def match_configurations(
             meas_results[(i, j)] = meas_result
             breakdown_map[(i, j)] = breakdown
 
-    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+    matched, unmatched_row_ids, unmatched_col_ids = _hungarian_match(
+        cost_matrix, n_target, n_extracted, max_cost=CONFIG_UNMATCHED_PENALTY,
+    )
 
+    max_weight = (
+        CONFIG_TAGS_WEIGHT
+        + CONFIG_STRUCT_WEIGHT
+        + CONFIG_NAME_WEIGHT
+        + CONFIG_MEASUREMENT_WEIGHT
+        + CONFIG_WITHIN_WEIGHT
+    )
     matched_pairs: list[tuple[Configuration, Configuration, float]] = []
     nested_results: list[MeasurementMatchResult] = []
     breakdowns: list[ConfigScoreBreakdown] = []
-    matched_target_indices: set[int] = set()
-    matched_extracted_indices: set[int] = set()
 
-    for r, c in zip(row_ind, col_ind):
-        if r < n_target and c < n_extracted and cost_matrix[r][c] < CONFIG_UNMATCHED_PENALTY:
-            score = 1.0 - cost_matrix[r][c] / (
-                CONFIG_TAGS_WEIGHT
-                + CONFIG_STRUCT_WEIGHT
-                + CONFIG_NAME_WEIGHT
-                + CONFIG_MEASUREMENT_WEIGHT
-                + CONFIG_WITHIN_WEIGHT
-            )
-            score = max(0.0, score)
-            matched_pairs.append((target_configs[r], extracted_configs[c], score))
-            nested_results.append(meas_results[(r, c)])
-            breakdowns.append(breakdown_map[(r, c)])
-            matched_target_indices.add(r)
-            matched_extracted_indices.add(c)
-
-    unmatched_target = [target_configs[i] for i in range(n_target) if i not in matched_target_indices]
-    unmatched_extracted = [extracted_configs[j] for j in range(n_extracted) if j not in matched_extracted_indices]
+    for r, c, cost in matched:
+        score = max(0.0, 1.0 - cost / max_weight)
+        matched_pairs.append((target_configs[r], extracted_configs[c], score))
+        nested_results.append(meas_results[(r, c)])
+        breakdowns.append(breakdown_map[(r, c)])
 
     return ConfigurationMatchResult(
         matched_pairs=matched_pairs,
-        unmatched_target=unmatched_target,
-        unmatched_extracted=unmatched_extracted,
+        unmatched_target=[target_configs[i] for i in unmatched_row_ids],
+        unmatched_extracted=[extracted_configs[j] for j in unmatched_col_ids],
         nested_measurement_results=nested_results,
         breakdowns=breakdowns,
     )
@@ -1376,42 +1384,32 @@ def compare_experiments(
             cost_matrix[i][j] = result.cost
             cost_results[(i, j)] = result
 
-    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+    matched, unmatched_row_ids, unmatched_col_ids = _hungarian_match(
+        cost_matrix, n_target, n_extracted, max_cost=UNMATCHED_PENALTY,
+    )
 
     matched_materials: list[MaterialMatchResult] = []
-    matched_target_indices: set[int] = set()
-    matched_extracted_indices: set[int] = set()
     total_cost = 0.0
 
-    for r, c in zip(row_ind, col_ind):
-        # Only count as a match if both indices are real (not padding)
-        # and cost is below the unmatched penalty
-        if r < n_target and c < n_extracted and cost_matrix[r][c] < UNMATCHED_PENALTY:
-            result = cost_results[(r, c)]
-            matched_materials.append(
-                MaterialMatchResult(
-                    target=target_items[r].material,
-                    extracted=extracted_items[c].material,
-                    cost=result.cost,
-                    process_edit_distance=result.process_edit_distance,
-                    measurement_result=result.measurement_result,
-                    process_alignment=result.process_alignment,
-                    config_match=result.config_match,
-                )
+    for r, c, cost in matched:
+        result = cost_results[(r, c)]
+        matched_materials.append(
+            MaterialMatchResult(
+                target=target_items[r].material,
+                extracted=extracted_items[c].material,
+                cost=result.cost,
+                process_edit_distance=result.process_edit_distance,
+                measurement_result=result.measurement_result,
+                process_alignment=result.process_alignment,
+                config_match=result.config_match,
             )
-            matched_target_indices.add(r)
-            matched_extracted_indices.add(c)
-            total_cost += result.cost
-
-    unmatched_target = [target_items[i].material for i in range(n_target) if i not in matched_target_indices]
-    unmatched_extracted = [
-        extracted_items[j].material for j in range(n_extracted) if j not in matched_extracted_indices
-    ]
+        )
+        total_cost += result.cost
 
     return ExperimentComparisonResult(
         matched_materials=matched_materials,
-        unmatched_target_materials=unmatched_target,
-        unmatched_extracted_materials=unmatched_extracted,
+        unmatched_target_materials=[target_items[i].material for i in unmatched_row_ids],
+        unmatched_extracted_materials=[extracted_items[j].material for j in unmatched_col_ids],
         total_cost=total_cost,
     )
 
