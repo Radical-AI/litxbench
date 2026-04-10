@@ -1,5 +1,5 @@
-Building Extractions
-====================
+Advanced Usage
+==============
 
 This page covers the details of building ``Experiment`` objects, including how to
 specify inputs to synthesis groups (mixing materials together) and how to use
