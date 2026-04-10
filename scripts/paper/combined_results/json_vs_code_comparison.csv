@@ -1,7 +1,7 @@
 model	output_json_f1	output_json_attempts	output_code_f1	output_code_attempts
-Claude Haiku 4.5	0.6321	3.58	0.6488 +/- 0.0133	2.21
-GPT 5 Mini Medium	0.6502	3.50	0.6731 +/- 0.0422	2.49
-Gemini 3 Flash	0.7558	3.06	0.7371 +/- 0.0495	2.58
-Claude Opus 4.6	0.7163	2.16	0.7208 +/- 0.0398	1.53
-GPT 5.2 High	0.6891	1.95	0.7244 +/- 0.0215	1.46
-Gemini 3.1 Pro	0.7566	2.21	0.7701 +/- 0.0306	1.51
+Claude Haiku 4.5	0.6337	3.58	0.6510 +/- 0.0130	2.21
+GPT 5 Mini Medium	0.6511	3.50	0.6764 +/- 0.0434	2.49
+Gemini 3 Flash	0.7575	3.06	0.7376 +/- 0.0489	2.58
+Claude Opus 4.6	0.7164	2.16	0.7231 +/- 0.0401	1.53
+GPT 5.2 High	0.6936	1.95	0.7273 +/- 0.0198	1.46
+Gemini 3.1 Pro	0.7573	2.21	0.7708 +/- 0.0327	1.51
