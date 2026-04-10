@@ -1442,7 +1442,7 @@ wheels = [
 
 [[package]]
 name = "litxbench"
-version = "0.1.1"
+version = "0.1.2"
 source = { editable = "." }
 dependencies = [
     { name = "pint", marker = "sys_platform == 'darwin' or sys_platform == 'linux'" },
