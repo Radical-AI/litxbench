@@ -4,28 +4,6 @@ Core Concepts
 LitXBench represents material extractions as structured Python objects. This page explains
 the data model and the design principles behind it.
 
-The Experiment Extraction Problem
----------------------------------
-
-The experiment extraction task is to output all synthesized materials *m_i* in a paper.
-Each material *m* is created from a synthesis process *p* and has measurements *x*. The experiment extraction task is to output all
-measurements *x* for each material *m*. The result can be represented as a list of tuples
-*(m, p, x)*.
-
-**Note: Materials are not compositions.** Since compositions are measured values,
-there can be multiple composition measurements for each material (e.g. measured by a balance, energy-dispersive X-ray spectroscopy, or optical emission spectroscopy).
-
-Design Principles
------------------
-
-1. **Process lineage over composition** -- A material's properties depend on how it was made,
-   not just what it's made of. Measurements are linked to the full synthesis history.
-
-2. **Canonical enumerations** -- Categorical values are mapped to canonical identifiers to prevent
-   alias collisions. The ``normalize()`` function documents the mapping between a paper's terminology and the correct canonical value.
-
-3. **Code as representation** -- Materials are expressed as executable Python code rather than
-   JSON or plain text. This makes LitXBench benchmarks easy-to-edit, have high auditability for readers, and easily allows code-based extraction validation.
 
 Data Model Overview
 -------------------
