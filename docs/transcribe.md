@@ -40,7 +40,7 @@ The transcribe feature processes PDFs using OCR and LLM extraction to produce st
    This includes the pydantic-ai dependency needed for extraction.
 
    ```bash
-   uv sync --group paper
+   uv sync --extra paper
    ```
 
 5. **Set your API keys**
