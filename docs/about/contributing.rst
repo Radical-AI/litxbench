@@ -4,7 +4,7 @@ Contributing to the Leaderboard
 We welcome community contributions to the :doc:`/leaderboard`. To add your method:
 
 1. Run your extraction method on the LitXAlloy benchmark dataset by calling ``compare_experiments`` and ``compute_multi_level_metrics``. An example is in the `usage script <https://github.com/Radical-AI/litxbench/blob/main/examples/usage.py>`_.
-2. Open a `pull request <https://github.com/Radical-AI/litxbench/pulls>`_ that adds your results as a new row to the leaderboard table in `docs/index.rst <https://github.com/Radical-AI/litxbench/blob/main/docs/index.rst>`_.
+2. Open a `pull request <https://github.com/Radical-AI/litxbench/pulls>`_ that adds your results as a new row to the leaderboard table in `docs/index.rst <https://github.com/Radical-AI/litxbench/blob/main/docs/index.rst>`_. See `this example PR <https://github.com/Radical-AI/litxbench/pull/5>`_ for reference.
 
 When updating `docs/index.rst <https://github.com/Radical-AI/litxbench/blob/main/docs/index.rst>`_, please include:
 
