@@ -47,8 +47,8 @@
               "type": "phase",
               "struct": "BCC",
               "tags": [
-                "dendrite",
-                "equiaxed"
+                "equiaxed",
+                "dendrite"
               ]
             }
           ],
@@ -184,13 +184,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under a Ti-gettered high-purity argon atmosphere on a water-cooled Cu hearth. The alloys were remelted several times and flipped each times in order to improve homogeneity. This resulted in alloy buttons with about 11 mm thick and 30 mm in diameter.",
-                  "source": "Section 2. Experimental procedure",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Section 2. Experimental procedure"
                 },
                 {
                   "kind": "As Cast",
@@ -215,13 +209,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under a Ti-gettered high-purity argon atmosphere on a water-cooled Cu hearth. The alloys were remelted several times and flipped each times in order to improve homogeneity. This resulted in alloy buttons with about 11 mm thick and 30 mm in diameter.",
-                  "source": "Section 2. Experimental procedure",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Section 2. Experimental procedure"
                 },
                 {
                   "kind": "As Cast",
@@ -246,13 +234,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under a Ti-gettered high-purity argon atmosphere on a water-cooled Cu hearth. The alloys were remelted several times and flipped each times in order to improve homogeneity. This resulted in alloy buttons with about 11 mm thick and 30 mm in diameter.",
-                  "source": "Section 2. Experimental procedure",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Section 2. Experimental procedure"
                 },
                 {
                   "kind": "As Cast",
@@ -277,13 +259,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under a Ti-gettered high-purity argon atmosphere on a water-cooled Cu hearth. The alloys were remelted several times and flipped each times in order to improve homogeneity. This resulted in alloy buttons with about 11 mm thick and 30 mm in diameter.",
-                  "source": "Section 2. Experimental procedure",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Section 2. Experimental procedure"
                 },
                 {
                   "kind": "As Cast",
@@ -505,10 +481,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under an argon atmosphere",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "Drop Casting",
@@ -683,8 +656,8 @@
               "name": "intragranular B2 grains",
               "struct": "B2",
               "tags": [
-                "precipitate",
-                "intragranular"
+                "intragranular",
+                "precipitate"
               ],
               "within": "soft FCC lamellae",
               "description": "NiAl-rich precipitates",
@@ -738,8 +711,8 @@
               "name": "soft FCC lamellae",
               "struct": "FCC",
               "tags": [
-                "twin",
-                "lamellar"
+                "lamellar",
+                "twin"
               ],
               "description": "rich in Fe and Cr",
               "source": "the enriched Fe and Cr lamellae corresponded to FCC grains",
@@ -757,8 +730,8 @@
               "name": "intragranular B2 grains",
               "struct": "B2",
               "tags": [
-                "precipitate",
-                "intragranular"
+                "intragranular",
+                "precipitate"
               ],
               "within": "soft FCC lamellae",
               "description": "NiAl-rich precipitates",
@@ -891,8 +864,8 @@
               "name": "intragranular B2 grains",
               "struct": "B2",
               "tags": [
-                "precipitate",
-                "intragranular"
+                "intragranular",
+                "precipitate"
               ],
               "within": "soft FCC lamellae",
               "description": "NiAl-rich precipitates",
@@ -960,10 +933,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Arc melted under a Ti-gettered high-purity argon atmosphere. The melting was repeated at least five times to achieve a good chemical homogeneity of the alloy.",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "Suction Casting",
@@ -989,13 +959,7 @@
                 {
                   "kind": "Cold Rolling",
                   "description": "multi-pass cold-rolling to 84-86% reduction in thickness (the final thickness of ~600 \u03bcm) using a laboratory-scale two-high rolling machine.",
-                  "source": "Methods.",
-                  "inputs": [
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA"
-                  ]
+                  "source": "Methods."
                 }
               ]
             },
@@ -1046,13 +1010,7 @@
                 {
                   "kind": "Cold Rolling",
                   "description": "multi-pass cold-rolling to 84-86% reduction in thickness (the final thickness of ~600 \u03bcm) using a laboratory-scale two-high rolling machine.",
-                  "source": "Methods.",
-                  "inputs": [
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA"
-                  ]
+                  "source": "Methods."
                 }
               ]
             },
@@ -1103,13 +1061,7 @@
                 {
                   "kind": "Cold Rolling",
                   "description": "multi-pass cold-rolling to 84-86% reduction in thickness (the final thickness of ~600 \u03bcm) using a laboratory-scale two-high rolling machine.",
-                  "source": "Methods.",
-                  "inputs": [
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA"
-                  ]
+                  "source": "Methods."
                 }
               ]
             },
@@ -1160,13 +1112,7 @@
                 {
                   "kind": "Cold Rolling",
                   "description": "multi-pass cold-rolling to 84-86% reduction in thickness (the final thickness of ~600 \u03bcm) using a laboratory-scale two-high rolling machine.",
-                  "source": "Methods.",
-                  "inputs": [
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA",
-                    "as-cast_EHEA"
-                  ]
+                  "source": "Methods."
                 }
               ]
             },
@@ -1272,8 +1218,8 @@
               "type": "phase",
               "name": "interdendritic",
               "tags": [
-                "eutectic",
-                "interdendritic"
+                "interdendritic",
+                "eutectic"
               ],
               "source": "Figure 6 caption",
               "measurements": [
@@ -1495,16 +1441,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1533,16 +1470,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1571,16 +1499,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1609,16 +1528,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1647,16 +1557,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1685,16 +1586,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1723,16 +1615,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Also, arc-melted pellets were remelted four times to ensure homogeneity",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -1978,12 +1861,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "The TRIP HEA was produced by melting and casting in a vacuum induction furnace",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -2031,12 +1909,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "The TRIP HEA was produced by melting and casting in a vacuum induction furnace",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -2097,12 +1970,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "The TRIP HEA was produced by melting and casting in a vacuum induction furnace",
-                  "source": "Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -2765,14 +2633,7 @@
                   "kind": "Induction Melting",
                   "description": "Firstly, Al and Si were placed at the bottom of the crucible to guarantee a bath base where the other elements were dissolved from highest to lowest melting point. In the second stage, the variable element of each alloy (Fe, Ni, Cr, Mn or Zr) was added to the molten alloy. The maximum temperature was reached at this stage. Finally, Cu, Zn and Mg were added respectively and held around 750 \u00b0C, at least 10 minutes to reach complete dissolution.",
                   "temperature": "790 degree_Celsius",
-                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures"
                 }
               ]
             },
@@ -2809,14 +2670,7 @@
                   "kind": "Induction Melting",
                   "description": "Firstly, Al and Si were placed at the bottom of the crucible to guarantee a bath base where the other elements were dissolved from highest to lowest melting point. In the second stage, the variable element of each alloy (Fe, Ni, Cr, Mn or Zr) was added to the molten alloy. The maximum temperature was reached at this stage. Finally, Cu, Zn and Mg were added respectively and held around 750 \u00b0C, at least 10 minutes to reach complete dissolution.",
                   "temperature": "785 degree_Celsius",
-                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures"
                 }
               ]
             },
@@ -2853,14 +2707,7 @@
                   "kind": "Induction Melting",
                   "description": "Firstly, Al and Si were placed at the bottom of the crucible to guarantee a bath base where the other elements were dissolved from highest to lowest melting point. In the second stage, the variable element of each alloy (Fe, Ni, Cr, Mn or Zr) was added to the molten alloy. The maximum temperature was reached at this stage. Finally, Cu, Zn and Mg were added respectively and held around 750 \u00b0C, at least 10 minutes to reach complete dissolution.",
                   "temperature": "780 degree_Celsius",
-                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures"
                 }
               ]
             },
@@ -2897,14 +2744,7 @@
                   "kind": "Induction Melting",
                   "description": "Firstly, Al and Si were placed at the bottom of the crucible to guarantee a bath base where the other elements were dissolved from highest to lowest melting point. In the second stage, the variable element of each alloy (Fe, Ni, Cr, Mn or Zr) was added to the molten alloy. The maximum temperature was reached at this stage. Finally, Cu, Zn and Mg were added respectively and held around 750 \u00b0C, at least 10 minutes to reach complete dissolution.",
                   "temperature": "830 degree_Celsius",
-                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures"
                 }
               ]
             },
@@ -2941,14 +2781,7 @@
                   "kind": "Induction Melting",
                   "description": "Firstly, Al and Si were placed at the bottom of the crucible to guarantee a bath base where the other elements were dissolved from highest to lowest melting point. In the second stage, the variable element of each alloy (Fe, Ni, Cr, Mn or Zr) was added to the molten alloy. The maximum temperature was reached at this stage. Finally, Cu, Zn and Mg were added respectively and held around 750 \u00b0C, at least 10 minutes to reach complete dissolution.",
                   "temperature": "850 degree_Celsius",
-                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Methods->Materials preparation and table 4 for the actual maximum furnace temperatures"
                 }
               ]
             },
@@ -3284,13 +3117,7 @@
               "events": [
                 {
                   "kind": "Induction Melting",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Work"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -3319,119 +3146,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:1",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:1",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:1",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -3455,119 +3170,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:2",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:2",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:2",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -3589,13 +3192,7 @@
               "events": [
                 {
                   "kind": "Induction Melting",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Work"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -3624,119 +3221,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:4",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:4",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:4",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -3760,119 +3245,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:5",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:5",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:5",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -3894,13 +3267,7 @@
               "events": [
                 {
                   "kind": "Induction Melting",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Work"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -3929,119 +3296,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:7",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:7",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:7",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -4065,119 +3320,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:8",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:8",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:9",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:8",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -4199,13 +3342,7 @@
               "events": [
                 {
                   "kind": "Induction Melting",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Work"
                 },
                 {
                   "kind": "Gravity Casting",
@@ -4234,119 +3371,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:10",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:10",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:10",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "10"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "10 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -4370,119 +3395,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:0",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:11",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:3",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:11",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
-                }
-              ]
-            }
-          ],
-          "source_code": "[ProcessEvent(kind=ProcessKind.Annealing, temperature=Quantity(value=900, unit=Celsius), duration=Quantity(value=\"[Hours]\", unit=Hour), source=\"Experimental Work\")]",
-          "start_line": 40,
-          "end_line": 40
-        },
-        {
-          "source": "doi_10_1155__2019__2157592/exp:0/material:6",
-          "target": "doi_10_1155__2019__2157592/exp:0/material:11",
-          "label": "annealing",
-          "process_steps": [
-            {
-              "base_name": "annealing",
-              "variables": {
-                "Hours": "20"
-              },
-              "events": [
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "20 hour",
-                  "source": "Experimental Work",
-                  "inputs": [
-                    "C1",
-                    "C1",
-                    "C1 5mm",
-                    "C1 5mm",
-                    "C2",
-                    "C2",
-                    "C3",
-                    "C3"
-                  ]
+                  "source": "Experimental Work"
                 }
               ]
             }
@@ -4507,21 +3420,6 @@
     {
       "nodes": [
         {
-          "id": "doi_10_3390__coatings9010016/exp:0/raw:Q235 steel substrate",
-          "type": "raw_material",
-          "label": "Q235 steel substrate",
-          "name": "Q235 steel substrate",
-          "materials": {
-            "Q235 steel substrate": {
-              "kind": "RawMaterialKind.Plate",
-              "description": null
-            }
-          },
-          "source_code": "RawMaterial(kind=RawMaterialKind.Plate)",
-          "start_line": 41,
-          "end_line": 41
-        },
-        {
           "id": "doi_10_3390__coatings9010016/exp:0/raw:elements",
           "type": "raw_material",
           "label": "elements",
@@ -4535,6 +3433,21 @@
           "source_code": "RawMaterial(kind=RawMaterialKind.Powder, description=\"Co, Cr, Fe, and Ni powders with high purity (99.9 wt.%) with powder size <75 \u00b5m\")",
           "start_line": 39,
           "end_line": 39
+        },
+        {
+          "id": "doi_10_3390__coatings9010016/exp:0/raw:Q235 steel substrate",
+          "type": "raw_material",
+          "label": "Q235 steel substrate",
+          "name": "Q235 steel substrate",
+          "materials": {
+            "Q235 steel substrate": {
+              "kind": "RawMaterialKind.Plate",
+              "description": null
+            }
+          },
+          "source_code": "RawMaterial(kind=RawMaterialKind.Plate)",
+          "start_line": 41,
+          "end_line": 41
         },
         {
           "id": "doi_10_3390__coatings9010016/exp:0/raw:wc_additions",
@@ -4939,10 +3852,7 @@
               "events": [
                 {
                   "kind": "Grinding",
-                  "description": "400 mesh sandpaper",
-                  "inputs": [
-                    "Q235 steel substrate"
-                  ]
+                  "description": "400 mesh sandpaper"
                 },
                 {
                   "kind": "Grinding",
@@ -4979,11 +3889,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5019,11 +3925,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5059,11 +3961,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5099,11 +3997,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5139,11 +4033,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5179,11 +4069,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "mixed at 350 revolutions per minute (rpm) in an argon atmosphere. High-performance stainless-steel vials and balls were utilized, and the ball-to-powder mass ratio was 15:1. The diameters of milling balls used were 10, 6, and 3 mm, and the mass ratio of these three kinds of balls was 1:1:1",
                   "duration": "200 hour",
-                  "source": "Experimental Procedure",
-                  "inputs": [
-                    "prepared_steel",
-                    "prepared_steel"
-                  ]
+                  "source": "Experimental Procedure"
                 },
                 {
                   "kind": "Mixing",
@@ -5697,15 +4583,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -5735,15 +4613,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -5773,15 +4643,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -5811,15 +4673,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -5849,15 +4703,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -5887,15 +4733,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Under an argon atmosphere. In order to decrease the aluminum losses, the other elements, i.e., Nb, Ti, Mo, and V, were re-melted four times first, then Al is added to the pre-melted ingots, and all the constituents were re-melted four times to ensure the chemical homogeneity of the alloys. All the liquid states were held for 5 minutes during each melting event. Used a high-purity molten Ti as a trap for residual oxygen",
-                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "Experimental Procedures. The abstract says that it's VacuumArcMelting"
                 },
                 {
                   "kind": "As Cast",
@@ -6048,10 +4886,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Vacuum arc melting on a water-cooled copper hearth in a Ti-gettered, high-purity argon atmosphere. To achieve a homogeneous distribution of elements, the ingot was remelted at least seven times. Between melts, the ingot was flipped in an attempt to better mix the constituent elements. The ingot was about 35 mm in diameter and 15 mm in height.",
-                  "source": "Computational Methodologies and Experimental Procedures",
-                  "inputs": [
-                    "elements"
-                  ]
+                  "source": "Computational Methodologies and Experimental Procedures"
                 },
                 {
                   "kind": "As Cast",
@@ -6736,15 +5571,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -6769,15 +5596,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -6802,15 +5621,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -6835,15 +5646,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -6868,15 +5671,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -6901,15 +5696,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "These pure metals were stacked together in the sequence of low melting point to high melting point from bottom to top. The ingot of each alloy was flipped and re-melted, at least, four times to improve the chemical homogeneity.",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7629,16 +6416,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7664,16 +6442,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7699,16 +6468,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7734,16 +6494,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7769,16 +6520,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7804,16 +6546,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -7839,16 +6572,7 @@
                 {
                   "kind": "Arc Melting",
                   "description": "Experimental alloys were prepared by vacuum arc melting in water cooled copper crucible. Casting was performed 8x times and flipped for each melt to mix the elements thoroughly and suppress chemical heterogeneity",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "As Cast",
@@ -8212,13 +6936,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "Milled in a planetary ball miller (QM-BP, Nanjing Nanda Instrument Plant, Nanjing, China) (300 rpm, argon atmosphere) with stainless steel vials and balls as milling media (a ball-to-powder mass ratio of 20:1). N-heptane was used as the processing controlling agent (PCA) to avoid cold welding and oxidation.",
                   "duration": "6 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8242,13 +6960,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "Milled in a planetary ball miller (QM-BP, Nanjing Nanda Instrument Plant, Nanjing, China) (300 rpm, argon atmosphere) with stainless steel vials and balls as milling media (a ball-to-powder mass ratio of 20:1). N-heptane was used as the processing controlling agent (PCA) to avoid cold welding and oxidation.",
                   "duration": "18 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8272,13 +6984,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "Milled in a planetary ball miller (QM-BP, Nanjing Nanda Instrument Plant, Nanjing, China) (300 rpm, argon atmosphere) with stainless steel vials and balls as milling media (a ball-to-powder mass ratio of 20:1). N-heptane was used as the processing controlling agent (PCA) to avoid cold welding and oxidation.",
                   "duration": "30 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8302,13 +7008,7 @@
                   "kind": "Mechanical Alloying",
                   "description": "Milled in a planetary ball miller (QM-BP, Nanjing Nanda Instrument Plant, Nanjing, China) (300 rpm, argon atmosphere) with stainless steel vials and balls as milling media (a ball-to-powder mass ratio of 20:1). N-heptane was used as the processing controlling agent (PCA) to avoid cold welding and oxidation.",
                   "duration": "60 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8333,13 +7033,7 @@
                   "description": "Consolidated by SPS (Dr. Sinter-3.20 MKII, Sumitomo, Osaka, Japan). The pressure was 30 MPa uniaxial during sintering. The dwell time at temperature was 10 min. The atmosphere was argon.",
                   "temperature": "600 degree_Celsius",
                   "duration": "10 minute",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "base",
-                    "base",
-                    "base",
-                    "base"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8364,13 +7058,7 @@
                   "description": "Consolidated by SPS (Dr. Sinter-3.20 MKII, Sumitomo, Osaka, Japan). The pressure was 30 MPa uniaxial during sintering. The dwell time at temperature was 10 min. The atmosphere was argon.",
                   "temperature": "700 degree_Celsius",
                   "duration": "10 minute",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "base",
-                    "base",
-                    "base",
-                    "base"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8395,13 +7083,7 @@
                   "description": "Consolidated by SPS (Dr. Sinter-3.20 MKII, Sumitomo, Osaka, Japan). The pressure was 30 MPa uniaxial during sintering. The dwell time at temperature was 10 min. The atmosphere was argon.",
                   "temperature": "800 degree_Celsius",
                   "duration": "10 minute",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "base",
-                    "base",
-                    "base",
-                    "base"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -8426,13 +7108,7 @@
                   "description": "Consolidated by SPS (Dr. Sinter-3.20 MKII, Sumitomo, Osaka, Japan). The pressure was 30 MPa uniaxial during sintering. The dwell time at temperature was 10 min. The atmosphere was argon.",
                   "temperature": "900 degree_Celsius",
                   "duration": "10 minute",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "base",
-                    "base",
-                    "base",
-                    "base"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -9253,16 +7929,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9344,16 +8011,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9436,16 +8094,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9528,16 +8177,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9619,16 +8259,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9711,16 +8342,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -9802,16 +8424,7 @@
                 {
                   "kind": "Ultrasonic Bath",
                   "description": "cleaned in ethanol in an ultrasonic bath",
-                  "source": "2.1. Alloy Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1. Alloy Preparation"
                 },
                 {
                   "kind": "Induction Melting",
@@ -10346,14 +8959,7 @@
                   "kind": "Arc Melting",
                   "description": "The ingots were prepared by arc melting under a Ti-gettered, high-purity argon atmosphere. Each ingot was re-melted at least five times in the water-chilled copper crucible, held at a liquid state for at least 5 min and flipped before each melting process. electromagnetic stirring was used during the melting process",
                   "duration": "5 minute",
-                  "source": "2.1 Material Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1 Material Preparation"
                 },
                 {
                   "kind": "As Cast",
@@ -10380,14 +8986,7 @@
                   "kind": "Arc Melting",
                   "description": "The ingots were prepared by arc melting under a Ti-gettered, high-purity argon atmosphere. Each ingot was re-melted at least five times in the water-chilled copper crucible, held at a liquid state for at least 5 min and flipped before each melting process. electromagnetic stirring was used during the melting process",
                   "duration": "5 minute",
-                  "source": "2.1 Material Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1 Material Preparation"
                 },
                 {
                   "kind": "As Cast",
@@ -10414,14 +9013,7 @@
                   "kind": "Arc Melting",
                   "description": "The ingots were prepared by arc melting under a Ti-gettered, high-purity argon atmosphere. Each ingot was re-melted at least five times in the water-chilled copper crucible, held at a liquid state for at least 5 min and flipped before each melting process. electromagnetic stirring was used during the melting process",
                   "duration": "5 minute",
-                  "source": "2.1 Material Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1 Material Preparation"
                 },
                 {
                   "kind": "As Cast",
@@ -10448,14 +9040,7 @@
                   "kind": "Arc Melting",
                   "description": "The ingots were prepared by arc melting under a Ti-gettered, high-purity argon atmosphere. Each ingot was re-melted at least five times in the water-chilled copper crucible, held at a liquid state for at least 5 min and flipped before each melting process. electromagnetic stirring was used during the melting process",
                   "duration": "5 minute",
-                  "source": "2.1 Material Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1 Material Preparation"
                 },
                 {
                   "kind": "As Cast",
@@ -10482,14 +9067,7 @@
                   "kind": "Arc Melting",
                   "description": "The ingots were prepared by arc melting under a Ti-gettered, high-purity argon atmosphere. Each ingot was re-melted at least five times in the water-chilled copper crucible, held at a liquid state for at least 5 min and flipped before each melting process. electromagnetic stirring was used during the melting process",
                   "duration": "5 minute",
-                  "source": "2.1 Material Preparation",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2.1 Material Preparation"
                 },
                 {
                   "kind": "As Cast",
@@ -10772,10 +9350,7 @@
                 {
                   "kind": "Vacuum Furnace",
                   "description": "Was a vacuum furnace",
-                  "source": "2. Experimental Procedures",
-                  "inputs": [
-                    "elements"
-                  ]
+                  "source": "2. Experimental Procedures"
                 },
                 {
                   "kind": "Gas Atomization",
@@ -10809,13 +9384,7 @@
                   "kind": "Annealing",
                   "temperature": "700 degree_Celsius",
                   "duration": "72 hour",
-                  "source": "2. Experimental Procedures",
-                  "inputs": [
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded"
-                  ]
+                  "source": "2. Experimental Procedures"
                 },
                 {
                   "kind": "Water Quenching",
@@ -10843,13 +9412,7 @@
                   "kind": "Annealing",
                   "temperature": "800 degree_Celsius",
                   "duration": "72 hour",
-                  "source": "2. Experimental Procedures",
-                  "inputs": [
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded"
-                  ]
+                  "source": "2. Experimental Procedures"
                 },
                 {
                   "kind": "Water Quenching",
@@ -10877,13 +9440,7 @@
                   "kind": "Annealing",
                   "temperature": "900 degree_Celsius",
                   "duration": "72 hour",
-                  "source": "2. Experimental Procedures",
-                  "inputs": [
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded"
-                  ]
+                  "source": "2. Experimental Procedures"
                 },
                 {
                   "kind": "Water Quenching",
@@ -10911,13 +9468,7 @@
                   "kind": "Annealing",
                   "temperature": "1000 degree_Celsius",
                   "duration": "72 hour",
-                  "source": "2. Experimental Procedures",
-                  "inputs": [
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded",
-                    "as_extruded"
-                  ]
+                  "source": "2. Experimental Procedures"
                 },
                 {
                   "kind": "Water Quenching",
@@ -11468,8 +10019,8 @@
               "type": "phase",
               "name": "Region A: Matrix",
               "tags": [
-                "dendrite",
-                "matrix"
+                "matrix",
+                "dendrite"
               ],
               "description": "It consists of a BCC Solid Solution AND Li2MgAl phase. Displays a dendritic structure divided by net-like interdendritic structure.",
               "source": "The matrix, i.e. Region A in figure 4d, consists of the BCC solid solution and the Li2MgAl phase. Both the Al15Li38Mg45Ca0.5Si1.5 and Al15Li39Mg45Ca0.5Si0.5 ULW-CCAs display a dendritic structure, which is divided by the net-like interdendritic structure.",
@@ -11560,19 +10111,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11616,19 +10155,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11672,19 +10199,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11728,19 +10243,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11784,19 +10287,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11840,19 +10331,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11896,19 +10375,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -11952,19 +10419,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -12008,19 +10463,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -12064,19 +10507,7 @@
                 {
                   "kind": "Induction Melting",
                   "description": "induction melting in an argon atmosphere and a graphite crucible.",
-                  "source": "2.3 Experiment Process",
-                  "inputs": [
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys",
-                    "elements",
-                    "master_alloys"
-                  ]
+                  "source": "2.3 Experiment Process"
                 },
                 {
                   "kind": "Casting Unspecified",
@@ -12306,13 +10737,7 @@
                   "kind": "Planetary Milling",
                   "description": "The weight ratio between the powder and the stainless-steel balls was 1:10 and ethanol was added as the milling medium. Milling speed was 300 rev/min",
                   "duration": "20 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             },
@@ -12365,13 +10790,7 @@
                   "kind": "Planetary Milling",
                   "description": "The weight ratio between the powder and the stainless-steel balls was 1:10 and ethanol was added as the milling medium. Milling speed was 300 rev/min",
                   "duration": "20 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             },
@@ -12424,13 +10843,7 @@
                   "kind": "Planetary Milling",
                   "description": "The weight ratio between the powder and the stainless-steel balls was 1:10 and ethanol was added as the milling medium. Milling speed was 300 rev/min",
                   "duration": "20 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             },
@@ -12483,13 +10896,7 @@
                   "kind": "Planetary Milling",
                   "description": "The weight ratio between the powder and the stainless-steel balls was 1:10 and ethanol was added as the milling medium. Milling speed was 300 rev/min",
                   "duration": "20 hour",
-                  "source": "2. Experimental",
-                  "inputs": [
-                    "elements",
-                    "elements",
-                    "elements",
-                    "elements"
-                  ]
+                  "source": "2. Experimental"
                 }
               ]
             }
@@ -12984,12 +11391,7 @@
                   "kind": "Press",
                   "description": "Used an industrial hydraulic (FRISA Aerospace, Santa Catarina, Mexico) press to reduce the height by 73%. It was deformed at a strain rate of 0.13s^{-1}",
                   "temperature": "980 degree_Celsius",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "workpiece",
-                    "workpiece",
-                    "workpiece"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "Cut",
@@ -13012,11 +11414,7 @@
                   "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
                   "temperature": "1100 degree_Celsius",
                   "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "Water Quenching",
@@ -13040,88 +11438,6 @@
           "end_line": 59
         },
         {
-          "source": "doi_10_3390__met10111466/exp:0/material:1",
-          "target": "doi_10_3390__met10111466/exp:0/material:0",
-          "label": "heat_treatment",
-          "process_steps": [
-            {
-              "base_name": "heat_treatment",
-              "variables": {},
-              "events": [
-                {
-                  "kind": "Solution Heat Treatment",
-                  "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
-                  "temperature": "1100 degree_Celsius",
-                  "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "24 hour",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                }
-              ]
-            }
-          ],
-          "source_code": "[\n                ProcessEvent(\n                    kind=ProcessKind.SolutionHeatTreatment,\n                    temperature=Quantity(value=1100, unit=Celsius),\n                    duration=Quantity(value=1, unit=Hour),\n                    description=\"They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, \",\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n                ProcessEvent(\n                    kind=normalize(val=ProcessKind.Annealing, val_in_paper=\"aging treatment\"),\n                    temperature=Quantity(value=900, unit=Celsius),\n                    duration=Quantity(value=24, unit=Hour),\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n            ]",
-          "start_line": 43,
-          "end_line": 59
-        },
-        {
-          "source": "doi_10_3390__met10111466/exp:0/material:2",
-          "target": "doi_10_3390__met10111466/exp:0/material:0",
-          "label": "heat_treatment",
-          "process_steps": [
-            {
-              "base_name": "heat_treatment",
-              "variables": {},
-              "events": [
-                {
-                  "kind": "Solution Heat Treatment",
-                  "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
-                  "temperature": "1100 degree_Celsius",
-                  "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "24 hour",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                }
-              ]
-            }
-          ],
-          "source_code": "[\n                ProcessEvent(\n                    kind=ProcessKind.SolutionHeatTreatment,\n                    temperature=Quantity(value=1100, unit=Celsius),\n                    duration=Quantity(value=1, unit=Hour),\n                    description=\"They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, \",\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n                ProcessEvent(\n                    kind=normalize(val=ProcessKind.Annealing, val_in_paper=\"aging treatment\"),\n                    temperature=Quantity(value=900, unit=Celsius),\n                    duration=Quantity(value=24, unit=Hour),\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n            ]",
-          "start_line": 43,
-          "end_line": 59
-        },
-        {
           "source": "doi_10_3390__met10111466/exp:0/raw:workpiece",
           "target": "doi_10_3390__met10111466/exp:0/material:1",
           "label": "press",
@@ -13134,12 +11450,7 @@
                   "kind": "Press",
                   "description": "Used an industrial hydraulic (FRISA Aerospace, Santa Catarina, Mexico) press to reduce the height by 73%. It was deformed at a strain rate of 0.13s^{-1}",
                   "temperature": "980 degree_Celsius",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "workpiece",
-                    "workpiece",
-                    "workpiece"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "Cut",
@@ -13171,12 +11482,7 @@
                   "kind": "Press",
                   "description": "Used an industrial hydraulic (FRISA Aerospace, Santa Catarina, Mexico) press to reduce the height by 73%. It was deformed at a strain rate of 0.13s^{-1}",
                   "temperature": "980 degree_Celsius",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "workpiece",
-                    "workpiece",
-                    "workpiece"
-                  ]
+                  "source": "2. Materials and Methods"
                 },
                 {
                   "kind": "Cut",
@@ -13209,52 +11515,7 @@
                   "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
                   "temperature": "1100 degree_Celsius",
                   "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
-                },
-                {
-                  "kind": "Water Quenching",
                   "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "24 hour",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                }
-              ]
-            }
-          ],
-          "source_code": "[\n                ProcessEvent(\n                    kind=ProcessKind.SolutionHeatTreatment,\n                    temperature=Quantity(value=1100, unit=Celsius),\n                    duration=Quantity(value=1, unit=Hour),\n                    description=\"They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, \",\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n                ProcessEvent(\n                    kind=normalize(val=ProcessKind.Annealing, val_in_paper=\"aging treatment\"),\n                    temperature=Quantity(value=900, unit=Celsius),\n                    duration=Quantity(value=24, unit=Hour),\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n            ]",
-          "start_line": 43,
-          "end_line": 59
-        },
-        {
-          "source": "doi_10_3390__met10111466/exp:0/material:2",
-          "target": "doi_10_3390__met10111466/exp:0/material:3",
-          "label": "heat_treatment",
-          "process_steps": [
-            {
-              "base_name": "heat_treatment",
-              "variables": {},
-              "events": [
-                {
-                  "kind": "Solution Heat Treatment",
-                  "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
-                  "temperature": "1100 degree_Celsius",
-                  "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
                 },
                 {
                   "kind": "Water Quenching",
@@ -13291,52 +11552,7 @@
                   "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
                   "temperature": "1100 degree_Celsius",
                   "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
-                },
-                {
-                  "kind": "Water Quenching",
                   "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Annealing",
-                  "temperature": "900 degree_Celsius",
-                  "duration": "24 hour",
-                  "source": "2. Materials and Methods"
-                },
-                {
-                  "kind": "Water Quenching",
-                  "source": "2. Materials and Methods"
-                }
-              ]
-            }
-          ],
-          "source_code": "[\n                ProcessEvent(\n                    kind=ProcessKind.SolutionHeatTreatment,\n                    temperature=Quantity(value=1100, unit=Celsius),\n                    duration=Quantity(value=1, unit=Hour),\n                    description=\"They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, \",\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n                ProcessEvent(\n                    kind=normalize(val=ProcessKind.Annealing, val_in_paper=\"aging treatment\"),\n                    temperature=Quantity(value=900, unit=Celsius),\n                    duration=Quantity(value=24, unit=Hour),\n                    source=\"2. Materials and Methods\",\n                ),\n                ProcessEvent(kind=ProcessKind.WaterQuenching, source=\"2. Materials and Methods\"),\n            ]",
-          "start_line": 43,
-          "end_line": 59
-        },
-        {
-          "source": "doi_10_3390__met10111466/exp:0/material:1",
-          "target": "doi_10_3390__met10111466/exp:0/material:4",
-          "label": "heat_treatment",
-          "process_steps": [
-            {
-              "base_name": "heat_treatment",
-              "variables": {},
-              "events": [
-                {
-                  "kind": "Solution Heat Treatment",
-                  "description": "They were subjected to DP718 consisting of a solution treatment at 1100 \u25e6C for 1 h, ",
-                  "temperature": "1100 degree_Celsius",
-                  "duration": "1 hour",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_press",
-                    "sample_b_after_press"
-                  ]
                 },
                 {
                   "kind": "Water Quenching",
@@ -13372,10 +11588,7 @@
                   "kind": "Press",
                   "description": "tested at 0.001 s^-1 and compressed to a total strain of 0.6",
                   "temperature": "960 degree_Celsius",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_a_after_heat_treatment"
-                  ]
+                  "source": "2. Materials and Methods"
                 }
               ]
             }
@@ -13397,10 +11610,7 @@
                   "kind": "Press",
                   "description": "tested at 0.01 s^-1 and compressed to a total strain of 0.6",
                   "temperature": "1020 degree_Celsius",
-                  "source": "2. Materials and Methods",
-                  "inputs": [
-                    "sample_b_after_heat_treatment"
-                  ]
+                  "source": "2. Materials and Methods"
                 }
               ]
             }

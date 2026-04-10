@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Sequence
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any
 
 import pint
@@ -229,7 +229,7 @@ def resolve_process_events(
 
         # Auto-inject step.inputs into the first ProcessEvent's inputs
         if step.inputs and resolved:
-            resolved[0].inputs.extend(step.inputs)
+            resolved[0] = replace(resolved[0], inputs=resolved[0].inputs + step.inputs)
 
         all_events.extend(resolved)
     return all_events
