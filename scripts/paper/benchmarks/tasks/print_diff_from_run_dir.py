@@ -3,7 +3,7 @@
 Supports zero_shot, zero_shot_json, zero_shot_agentic_cli, and knowmat2 run directories.
 
 Usage:
-    uv run python src/experiment_extraction_eval/evals/litxalloy/benchmarks/eval_from_run_dir.py <run_dir_path>
+    uv run python scripts/paper/benchmarks/tasks/print_diff_from_run_dir.py <run_dir_path>
 
 Examples:
     # Agentic CLI run:

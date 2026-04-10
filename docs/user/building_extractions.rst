@@ -11,8 +11,8 @@ Specifying Inputs
 When a synthesis step combines multiple raw materials or intermediate products, you
 need to specify what feeds into it. There are three ways to do this.
 
-Via the process string
-^^^^^^^^^^^^^^^^^^^^^^
+Via the ``process`` String
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The first segment of a process string (before the first ``->``) lists the inputs to
 the first step. Multiple inputs are comma-separated:
@@ -64,8 +64,8 @@ This is useful when a step *within* the group introduces a new material
 Input names must reference either a key in ``raw_materials`` or the ``name`` of a
 previously defined output material.
 
-Via template variables in inputs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Via Template Variables
+^^^^^^^^^^^^^^^^^^^^^^
 
 Inputs can use template variables, allowing the same synthesis group to mix in
 different materials depending on the output material:
@@ -108,7 +108,8 @@ as a single logical measurement.
 
 .. code-block:: python
 
-   from litxbench import Measurement, CoreMeasurementValue, MeasurementStatistic
+   from litxbench import Measurement
+   from litxbench.core.models import CoreMeasurementValue, MeasurementStatistic
 
    *Measurement.group_measurements(
        kind=PhaseMeasurementKind.phase_size,

@@ -1,6 +1,5 @@
 """Run a custom question across all transcribed papers."""
 
-import re
 import textwrap
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
@@ -42,18 +41,8 @@ def build_agent() -> Agent:
 
 
 def get_manual_extraction_code_for_doi(doi: str) -> str:
-    dataset_path = Path(resolve_path("src/experiment_extraction_eval/evals/litxalloy/dataset/litxalloy.py"))
-    dataset_text = dataset_path.read_text()
-    doi_pattern = re.compile(r'^\s*"' + re.escape(doi) + r'":\s*\[', re.MULTILINE)
-    doi_match = doi_pattern.search(dataset_text)
-    if doi_match is None:
-        return ""
-
-    block_start = doi_match.start()
-    next_entry_pattern = re.compile(r'^\s*"10\.[^"]+":\s*\[', re.MULTILINE)
-    next_entry_match = next_entry_pattern.search(dataset_text, doi_match.end())
-    block_end = next_entry_match.start() if next_entry_match is not None else dataset_text.rfind("}")
-    return dataset_text[block_start:block_end].rstrip()
+    extraction_file = Path(resolve_path(f"src/litxbench/litxalloy/extractions/{doi}.py"))
+    return extraction_file.read_text()
 
 
 def build_question_prompt(doi: str, prompt_inputs: PromptInputs) -> str:

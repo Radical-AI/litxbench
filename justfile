@@ -4,7 +4,7 @@ default:
 
 # Build docs + explorer and preview locally
 docs:
-    uv run --group docs python -m sphinx docs docs/_build/html
+    uv run --extra docs python -m sphinx docs docs/_build/html
     cd ui && bash build-static.sh
     rm -rf docs/_build/html/explorer
     cp -r ui/out docs/_build/html/explorer

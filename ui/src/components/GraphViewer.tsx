@@ -188,6 +188,22 @@ export default function GraphViewer({
           },
         },
         {
+          selector: 'node[type="name-label"]',
+          style: {
+            "background-opacity": 0,
+            "border-width": 0,
+            width: "1px",
+            height: "1px",
+            "font-size": "12px",
+            "font-weight": "bold",
+            color: "#c9d1d9",
+            "text-outline-color": "#0d1117",
+            "text-outline-width": 2,
+            "text-max-width": "250px",
+            "events": "no" as any,
+          },
+        },
+        {
           selector: 'node[type="config"]',
           style: {
             "background-color": "#8957e5",
@@ -273,11 +289,51 @@ export default function GraphViewer({
 
     cyRef.current = cy;
 
+    // After layout, add floating name labels above nodes that have a distinct name
+    const NAME_LABEL_OFFSET = 38;
+    cy.ready(() => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const nameLabels: any[] = [];
+      cy.nodes().forEach((node) => {
+        const d = node.data();
+        if (d.name && d.name !== d.fullLabel && d.nodeType !== "config") {
+          const pos = node.position();
+          nameLabels.push({
+            group: "nodes",
+            data: {
+              id: `name-label-${d.id}`,
+              label: d.name,
+              nodeType: "name-label",
+              type: "name-label",
+              parentNodeId: d.id,
+            },
+            position: { x: pos.x, y: pos.y - NAME_LABEL_OFFSET },
+            grabbable: false,
+            selectable: false,
+          });
+        }
+      });
+      if (nameLabels.length > 0) cy.add(nameLabels);
+    });
+
+    // Keep name labels following their parent node on drag
+    cy.on("drag", "node", (e) => {
+      const node = e.target;
+      const d = node.data();
+      if (d.nodeType === "name-label") return;
+      const nameLabelNode = cy.getElementById(`name-label-${d.id}`);
+      if (nameLabelNode.length) {
+        const pos = node.position();
+        nameLabelNode.position({ x: pos.x, y: pos.y - NAME_LABEL_OFFSET });
+      }
+    });
+
     // Node hover — show details in sidebar
     cy.on("mouseover", "node", (e) => {
       const node = e.target;
-      node.addClass("hover");
       const d = node.data();
+      if (d.nodeType === "name-label") return;
+      node.addClass("hover");
       if (d.nodeType === "config") {
         onHoverRef.current({
           kind: "config",
@@ -342,8 +398,9 @@ export default function GraphViewer({
 
     // Node click
     cy.on("tap", "node", (e) => {
-      cy.edges().removeClass("selected");
       const d = e.target.data();
+      if (d.nodeType === "name-label") return;
+      cy.edges().removeClass("selected");
       if (d.nodeType === "config") {
         onSelectRef.current({
           kind: "config",

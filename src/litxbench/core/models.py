@@ -209,8 +209,10 @@ class Measurement(NumericQualifierMixin, Generic[MeasurementMethodT]):
         pressure: Quantity | None = None,  # all must share the same pressure
         source: str | None = None,
         group_name: str | None = None,  # all must share the same group name
-        values: list[CoreMeasurementValue] = field(default_factory=list),
+        values: list[CoreMeasurementValue] | None = None,
     ) -> list[Measurement[MeasurementMethodT]] | list[Measurement[Any]]:
+        if values is None:
+            values = []
         measurements = []
         if len(values) < 2:
             raise ValueError("At least two values must be provided")
@@ -548,7 +550,7 @@ class Machine:
 class Material(Generic[MeasurementClass]):
     _allowed_measurement_types: ClassVar[tuple[type, ...] | None] = None
 
-    process: InitVar[str | None] = None
+    process: str | None = None
     name: str | None = None
     measurements: Sequence[MeasurementClass]
     process_steps: list["ProcessStep"] | None = field(default=None, init=False)
@@ -562,9 +564,9 @@ class Material(Generic[MeasurementClass]):
                     cls._allowed_measurement_types = _resolve_type_to_classes(args[0])
                 break
 
-    def __post_init__(self, process: str | None) -> None:
-        if process is not None:
-            self.process_steps = ProcessStep.parse_process_string(process)
+    def __post_init__(self) -> None:
+        if self.process is not None:
+            self.process_steps = ProcessStep.parse_process_string(self.process)
 
         self._validate_compositions()
         self._validate_configuration_within()

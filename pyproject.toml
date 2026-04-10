@@ -1,6 +1,6 @@
 [project]
 name = "litxbench"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Benchmark for Information Extraction From Scientific Literature"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -8,6 +8,7 @@ dependencies = [
     "pymatgen>=2025.10.7",
     "pydantic>=2.12.5",
     "pint>=0.25.2",
+    "scipy>=1.14",
 ]
 license = "MIT"
 classifiers = [
@@ -40,6 +41,7 @@ paper = [
     "pydantic-ai>=1.39.0",
     "logfire>=0.4.0",
     "matplotlib",
+    "genai-prices",
 ]
 
 [build-system]

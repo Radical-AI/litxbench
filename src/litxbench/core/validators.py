@@ -50,7 +50,7 @@ def validate_synthesis_groups(
             raise ValueError("Synthesis groups dict must not be empty")
         return
 
-    materials_with_process = [m for m in output_materials if m.process_steps is not None]
+    materials_with_process = [m for m in output_materials if m.process_steps]
     if materials_with_process:
         raise ValueError(
             f"When synthesis_groups is a list, materials should not have a process. This is because it is implied that all materials use the same synthesis groups - so manually specifying a process is likely an error. Found {len(materials_with_process)} material(s) with process set."

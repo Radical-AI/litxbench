@@ -13,7 +13,7 @@ from scripts.paper.benchmarks.helpers.transcribe import mistral_ocr_with_images
 
 def main():
     """Transcribe all PDFs in the dataset directory."""
-    pdf_paths = glob.glob(resolve_path("datasets/litxalloy/pdfs/*"))
+    pdf_paths = glob.glob(resolve_path("datasets/litxalloy/pdfs/*.pdf"))
 
     for pdf_path in pdf_paths:
         # Create output directory

@@ -118,7 +118,7 @@ each containing multiple output materials with their measurements.
    doi = "doi_10_3390__e21020122"
    for exp in papers[doi]:
        print(f"Raw materials: {list(exp.raw_materials.keys())}")
-       print(f"Synthesis groups: {list(exp.synthesis_groups.keys())}")
+       print(f"Synthesis groups: {list(exp.synthesis_group_map.keys())}")
        for mat in exp.output_materials:
            print(f"  Material: {mat.process}")
            print(f"    Measurements: {len(mat.measurements)}")

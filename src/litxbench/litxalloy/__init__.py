@@ -1,8 +1,11 @@
 import urllib.request
 from pathlib import Path
 
-# hardcode version as it's separate from LitXBench
-__version__ = "0.1.0"
+# hardcode version as it's separate from LitXBench. This version is updated
+# every time the data changes or the evaluation changes. It's separate from
+# LitXBench to insulate leaderboard versions from changing when minor LitXBench
+# changes are made
+__version__ = "0.1.1"
 
 from litxbench.core.extraction_utils import (  # noqa: F401
     balance_composition,

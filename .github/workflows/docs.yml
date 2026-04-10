@@ -27,7 +27,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Install Python dependencies
-        run: uv sync --group docs
+        run: uv sync --extra docs
 
       - name: Build Sphinx documentation
         run: uv run sphinx-build docs docs/_build/html

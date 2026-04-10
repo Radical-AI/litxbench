@@ -381,9 +381,7 @@ def _setup_sandbox_project(
     _init_dirs = [
         sandbox_package_root,
         sandbox_package_root / "core",
-        sandbox_package_root / "evals",
-        sandbox_package_root / "evals/litxalloy",
-        sandbox_package_root / "evals/litxalloy/dataset",
+        sandbox_package_root / "litxalloy",
     ]
     for d in _init_dirs:
         d.mkdir(parents=True, exist_ok=True)
@@ -392,15 +390,11 @@ def _setup_sandbox_project(
             init_file.write_text("", encoding="utf-8")
 
     if pc.include_composition_helpers:
-        _write_file(
-            sandbox_package_root / "evals/litxalloy/dataset/litxalloy.py",
-            _build_sandbox_litxalloy_content(),
-        )
-        # Re-export composition helpers so the prompted import path works:
+        # Write composition helpers so the prompted import path works:
         #   from litxbench.litxalloy import balance_composition, ...
         _write_file(
-            sandbox_package_root / "evals/litxalloy/__init__.py",
-            "from litxbench.litxalloy import balance_composition, composition_with_weight_additions\n",
+            sandbox_package_root / "litxalloy/__init__.py",
+            _build_sandbox_litxalloy_content(),
         )
     if pc.include_normalize_function:
         _write_file(
@@ -463,7 +457,7 @@ def _read_run_count(sandbox_dir: Path) -> int:
     try:
         return int(counter_file.read_text().strip())
     except (FileNotFoundError, ValueError, OSError):
-        return 1
+        return 0
 
 
 def _extract_and_format_single_doi_agentic_cli(
