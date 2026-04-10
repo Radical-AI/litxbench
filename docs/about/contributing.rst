@@ -12,7 +12,7 @@ When updating ``docs/leaderboard.rst``, please include:
 2. The file containing the output experiment objects from your run
 3. Any publication you'd like linked
 4. A link to the PR that submitted your result
-5. The version of LitXAlloy it was evaluated on. You can get this with:
+5. The version of LitXAlloy it was evaluated on (this version is bumped when the dataset or evaluation methods change, so scores across different versions may not be directly comparable). You can get this with:
 
    .. code-block:: python
 
