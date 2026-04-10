@@ -11,16 +11,10 @@ Development Setup
 
    git clone https://github.com/Radical-AI/litxbench.git
    cd litxbench
-   uv sync --group dev
+   uv sync --extra dev
 
 If you want to replicate results from the paper you'll need to add `--group paper` to install the required dependencies.
 
-Running Tests
--------------
-
-.. code-block:: bash
-
-   uv run pytest
 
 Contributing to the Leaderboard
 -------------------------------
@@ -32,12 +26,3 @@ We welcome community contributions to the :doc:`/leaderboard`. To add your metho
 3. Open a `pull request <https://github.com/Radical-AI/litxbench/pulls>`_ that adds your results as a new row to the leaderboard table in ``docs/leaderboard.rst``.
 
 Uncertainties are not required -- if your method was only run once, simply report the score without a confidence interval.
-
-Building Docs Locally
----------------------
-
-.. code-block:: bash
-
-   uv sync --group docs
-   uv run sphinx-build docs docs/_build/html
-   open docs/_build/html/index.html
