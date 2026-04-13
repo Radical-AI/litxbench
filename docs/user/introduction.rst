@@ -6,7 +6,7 @@ It ships with **LitXAlloy**, a dense benchmark of 1426 measurements from 19 allo
 with evaluation tools to measure how well an extraction method captures the materials, processes,
 and measurements reported in a paper.
 
-| `GitHub <https://github.com/Radical-AI/litxbench>`_ | `PyPI <https://pypi.org/project/litxbench>`_ | `Paper <https://arxiv.org/pdf/2604.07649>`_ |
+| `GitHub <https://github.com/Radical-AI/litxbench>`_ | `PyPI <https://pypi.org/project/litxbench>`_ | `Paper <https://arxiv.org/abs/2604.07649>`_ |
 
 Installation
 ------------
