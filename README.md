@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/litxbench?logo=pypi&logoColor=white)](https://pypi.org/project/litxbench)
 [![LitXAlloy](https://img.shields.io/endpoint?url=https://radical-ai.github.io/litxbench/litxalloy-badge.json)](https://radical-ai.github.io/litxbench)
 
-LitXBench is a benchmark to evaluate LLMs on extracting material information synthesized in research papers. Read the preprint [here](https://arxiv.org/pdf/2604.07649).
+LitXBench is a benchmark to evaluate LLMs on extracting material information synthesized in research papers. Read the preprint [here](https://arxiv.org/abs/2604.07649).
 
 <p align="center">
   <img width="70%" src="https://radical-ai.github.io/litxbench/_static/core_principles.png" alt="LitXBench Principles for Accurate Extraction and Benchmarking. (1) To accurately capture a material’s properties, measurements must be linked to its processing lineage, rather than just its composition. (2) Categorical values should be mapped to canonical values to disambiguate similar values, as multiple papers may reference different properties with the same term. (3) Extracted materials are more editable and auditable when represented as code, reducing errors in the benchmark."/>
