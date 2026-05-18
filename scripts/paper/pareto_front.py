@@ -1,5 +1,5 @@
-import re
 import math
+import re
 from dataclasses import dataclass
 
 import matplotlib.pyplot as plt
