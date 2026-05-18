@@ -1,4 +1,4 @@
-# %%
+import math
 import re
 from dataclasses import dataclass
 
@@ -20,16 +20,16 @@ class ModelPoint:
 
 
 models: tuple[ModelPoint, ...] = (
-    ModelPoint("Gemini CLI (Gemini-3.1 Pro Preview)", 0.7952, 6.45507, GREEN, "s"),
-    ModelPoint("Gemini 3.1 Pro", 0.7701, 4.17163, BLUE, "s"),
-    ModelPoint("Gemini 3 Flash", 0.7371, 1.73078, RED, "s"),
-    ModelPoint("Claude Code (Opus 4.6)", 0.7754, 26.1145, GREEN, "o"),
-    ModelPoint("Claude Opus 4.6", 0.7203, 5.37406, BLUE, "o"),
-    ModelPoint("Claude Haiku 4.5", 0.6488, 1.7177, RED, "o"),
-    ModelPoint("Codex (GPT 5.2 Codex High)", 0.7246, 4.17361, GREEN, "^"),
-    ModelPoint("GPT 5.2 High", 0.7244, 4.99104, BLUE, "^"),
-    ModelPoint("GPT 5 Mini Med.", 0.6731, 3.46597, RED, "^"),
-    ModelPoint("KnowMat2", 0.4320, 19.40, GREEN, "p"),
+    ModelPoint("Gemini CLI (Gemini-3.1 Pro Preview)", 0.7958, 6.45507, GREEN, "s"),
+    ModelPoint("Gemini 3.1 Pro", 0.7708, 4.17163, BLUE, "s"),
+    ModelPoint("Gemini 3 Flash", 0.7376, 1.73078, RED, "s"),
+    ModelPoint("Claude Code (Opus 4.6)", 0.7766, 26.1145, GREEN, "o"),
+    ModelPoint("Claude Opus 4.6", 0.7231, 5.37406, BLUE, "o"),
+    ModelPoint("Claude Haiku 4.5", 0.6510, 1.7177, RED, "o"),
+    ModelPoint("Codex (GPT 5.2 Codex High)", 0.7268, 4.17361, GREEN, "^"),
+    ModelPoint("GPT 5.2 High", 0.7273, 4.99104, BLUE, "^"),
+    ModelPoint("GPT 5 Mini Med.", 0.6764, 3.46597, RED, "^"),
+    ModelPoint("KnowMat2", 0.4288, 19.40, GREEN, "p"),
 )
 
 
@@ -44,9 +44,24 @@ def pareto_front(points: tuple[ModelPoint, ...]) -> tuple[ModelPoint, ...]:
     return tuple(pareto_points)
 
 
-pareto = pareto_front(models)
-pareto_cost = [point.cost for point in pareto]
-pareto_f1 = [point.f1 for point in pareto]
+def upper_convex_front(points: tuple[ModelPoint, ...]) -> tuple[ModelPoint, ...]:
+    front: list[ModelPoint] = []
+
+    def slope(left: ModelPoint, right: ModelPoint) -> float:
+        x_left = math.log10(left.cost)
+        x_right = math.log10(right.cost)
+        return (right.f1 - left.f1) / (x_right - x_left)
+
+    for point in pareto_front(points):
+        while len(front) >= 2 and slope(front[-2], front[-1]) <= slope(front[-1], point):
+            front.pop()
+        front.append(point)
+    return tuple(front)
+
+
+convex_front = upper_convex_front(models)
+front_cost = [point.cost for point in convex_front]
+front_f1 = [point.f1 for point in convex_front]
 
 plt.rcParams.update(
     {
@@ -79,7 +94,7 @@ def clean_text(text: str) -> str:
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.set_box_aspect(1)
 
-ax.plot(pareto_cost, pareto_f1, color=LINE_C, linewidth=3.2, linestyle="--", zorder=2, label="Pareto front")
+ax.plot(front_cost, front_f1, color=LINE_C, linewidth=3.2, linestyle="--", zorder=2, label="Convex Pareto front")
 
 for point in models:
     ax.scatter(
@@ -131,4 +146,3 @@ plt.tight_layout()
 plt.savefig("pareto_front.pdf", bbox_inches="tight")  # vector output
 plt.savefig("pareto_front.png", bbox_inches="tight", dpi=1200)  # high-res raster
 plt.show()
-# %%
