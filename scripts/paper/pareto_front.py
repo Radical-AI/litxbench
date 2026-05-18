@@ -1,5 +1,5 @@
-# %%
 import re
+import math
 from dataclasses import dataclass
 
 import matplotlib.pyplot as plt
@@ -44,9 +44,24 @@ def pareto_front(points: tuple[ModelPoint, ...]) -> tuple[ModelPoint, ...]:
     return tuple(pareto_points)
 
 
-pareto = pareto_front(models)
-pareto_cost = [point.cost for point in pareto]
-pareto_f1 = [point.f1 for point in pareto]
+def upper_convex_front(points: tuple[ModelPoint, ...]) -> tuple[ModelPoint, ...]:
+    front: list[ModelPoint] = []
+
+    def slope(left: ModelPoint, right: ModelPoint) -> float:
+        x_left = math.log10(left.cost)
+        x_right = math.log10(right.cost)
+        return (right.f1 - left.f1) / (x_right - x_left)
+
+    for point in pareto_front(points):
+        while len(front) >= 2 and slope(front[-2], front[-1]) <= slope(front[-1], point):
+            front.pop()
+        front.append(point)
+    return tuple(front)
+
+
+convex_front = upper_convex_front(models)
+front_cost = [point.cost for point in convex_front]
+front_f1 = [point.f1 for point in convex_front]
 
 plt.rcParams.update(
     {
@@ -79,7 +94,7 @@ def clean_text(text: str) -> str:
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.set_box_aspect(1)
 
-ax.plot(pareto_cost, pareto_f1, color=LINE_C, linewidth=3.2, linestyle="--", zorder=2, label="Pareto front")
+ax.plot(front_cost, front_f1, color=LINE_C, linewidth=3.2, linestyle="--", zorder=2, label="Convex Pareto front")
 
 for point in models:
     ax.scatter(
@@ -131,4 +146,3 @@ plt.tight_layout()
 plt.savefig("pareto_front.pdf", bbox_inches="tight")  # vector output
 plt.savefig("pareto_front.png", bbox_inches="tight", dpi=1200)  # high-res raster
 plt.show()
-# %%
