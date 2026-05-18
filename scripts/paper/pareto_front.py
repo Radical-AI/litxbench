@@ -20,16 +20,16 @@ class ModelPoint:
 
 
 models: tuple[ModelPoint, ...] = (
-    ModelPoint("Gemini CLI (Gemini-3.1 Pro Preview)", 0.7952, 6.45507, GREEN, "s"),
-    ModelPoint("Gemini 3.1 Pro", 0.7701, 4.17163, BLUE, "s"),
-    ModelPoint("Gemini 3 Flash", 0.7371, 1.73078, RED, "s"),
-    ModelPoint("Claude Code (Opus 4.6)", 0.7754, 26.1145, GREEN, "o"),
-    ModelPoint("Claude Opus 4.6", 0.7203, 5.37406, BLUE, "o"),
-    ModelPoint("Claude Haiku 4.5", 0.6488, 1.7177, RED, "o"),
-    ModelPoint("Codex (GPT 5.2 Codex High)", 0.7246, 4.17361, GREEN, "^"),
-    ModelPoint("GPT 5.2 High", 0.7244, 4.99104, BLUE, "^"),
-    ModelPoint("GPT 5 Mini Med.", 0.6731, 3.46597, RED, "^"),
-    ModelPoint("KnowMat2", 0.4320, 19.40, GREEN, "p"),
+    ModelPoint("Gemini CLI (Gemini-3.1 Pro Preview)", 0.7958, 6.45507, GREEN, "s"),
+    ModelPoint("Gemini 3.1 Pro", 0.7708, 4.17163, BLUE, "s"),
+    ModelPoint("Gemini 3 Flash", 0.7376, 1.73078, RED, "s"),
+    ModelPoint("Claude Code (Opus 4.6)", 0.7766, 26.1145, GREEN, "o"),
+    ModelPoint("Claude Opus 4.6", 0.7231, 5.37406, BLUE, "o"),
+    ModelPoint("Claude Haiku 4.5", 0.6510, 1.7177, RED, "o"),
+    ModelPoint("Codex (GPT 5.2 Codex High)", 0.7268, 4.17361, GREEN, "^"),
+    ModelPoint("GPT 5.2 High", 0.7273, 4.99104, BLUE, "^"),
+    ModelPoint("GPT 5 Mini Med.", 0.6764, 3.46597, RED, "^"),
+    ModelPoint("KnowMat2", 0.4288, 19.40, GREEN, "p"),
 )
 
 

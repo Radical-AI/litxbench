@@ -176,11 +176,11 @@ LitXBench
        <td><a href="https://github.com/hasan-sayeed/KnowMat2">KnowMat2 (GPT-5.2 High)</a></td>
        <td>0.52</td>
        <td>0.43</td>
-       <td>0.43 &plusmn; 0.29</td>
-       <td>0.28</td>
-       <td>0.66</td>
-       <td>0.66</td>
-       <td>0.19</td>
+       <td>0.43 &plusmn; 0.06</td>
+       <td>0.27</td>
+       <td>0.67</td>
+       <td>0.65</td>
+       <td>0.17</td>
        <td>&mdash;</td>
        <td>19.40</td>
        <td class="links-cell"><a href="https://github.com/curtischong/KnowMat2">code</a> <a href="https://github.com/curtischong/KnowMat2/tree/master/std_1_high/knowmat2">run</a> <a href="https://chemrxiv.org/engage/chemrxiv/article-details/6902772ea482cba122c41c14">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
