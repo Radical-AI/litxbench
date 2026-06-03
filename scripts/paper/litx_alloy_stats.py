@@ -1,9 +1,153 @@
 """Statistics on the LitXAlloy dataset."""
 
 from collections import defaultdict
+from enum import Enum
 
-from litxbench.core.models import CompMeasurement, Measurement
+from litxbench.core.models import CompMeasurement, Configuration, GlobalLatticeParam, Measurement, Quantity
 from litxbench.litxalloy import papers
+
+EnumKey = tuple[str, str, str]
+
+
+def enum_key(value: Enum) -> EnumKey:
+    """Return a stable key for an enum member.
+
+    ``str, Enum`` members compare equal to bare strings, so storing the class
+    name and member name avoids collisions between enum classes or raw strings.
+    """
+    return (value.__class__.__name__, value.name, str(value.value))
+
+
+def add_enum(enum_by_class: dict[str, set[EnumKey]], value: object) -> None:
+    if not isinstance(value, Enum):
+        return
+    key = enum_key(value)
+    enum_by_class[key[0]].add(key)
+
+
+def record_quantity_enums(
+    quantity: Quantity | None,
+    enum_by_class: dict[str, set[EnumKey]],
+) -> None:
+    if quantity is None:
+        return
+    add_enum(enum_by_class, quantity.value_qualifier)
+
+
+def record_measurement_item_enums(
+    item: object,
+    enum_by_class: dict[str, set[EnumKey]],
+    string_categories: set[str],
+    measurement_kind_values: set[str],
+    measurement_kind_enums: set[EnumKey],
+    measurement_kind_strings: set[str],
+) -> None:
+    if isinstance(item, CompMeasurement):
+        add_enum(enum_by_class, item.method)
+    elif isinstance(item, Measurement):
+        if isinstance(item.kind, Enum):
+            key = enum_key(item.kind)
+            measurement_kind_enums.add(key)
+            measurement_kind_values.add(str(item.kind.value))
+            add_enum(enum_by_class, item.kind)
+        else:
+            kind = str(item.kind)
+            measurement_kind_strings.add(kind)
+            string_categories.add(kind)
+            measurement_kind_values.add(kind)
+
+        add_enum(enum_by_class, item.measurement_method)
+        add_enum(enum_by_class, item.measurement_statistic)
+        add_enum(enum_by_class, item.value_qualifier)
+        record_quantity_enums(item.temperature, enum_by_class)
+        record_quantity_enums(item.pressure, enum_by_class)
+    elif isinstance(item, GlobalLatticeParam):
+        add_enum(enum_by_class, item.struct)
+        record_quantity_enums(item.phase_fraction, enum_by_class)
+    elif isinstance(item, Configuration):
+        add_enum(enum_by_class, item.struct)
+        for tag in item.tags or []:
+            add_enum(enum_by_class, tag)
+        for nested in item.measurements:
+            record_measurement_item_enums(
+                nested,
+                enum_by_class,
+                string_categories,
+                measurement_kind_values,
+                measurement_kind_enums,
+                measurement_kind_strings,
+            )
+
+
+def collect_enum_usage():
+    """Collect unique enum members used by the actual LitXAlloy objects."""
+    enum_by_class: dict[str, set[EnumKey]] = defaultdict(set)
+    string_categories: set[str] = set()
+    measurement_kind_values: set[str] = set()
+    measurement_kind_enums: set[EnumKey] = set()
+    measurement_kind_strings: set[str] = set()
+
+    for experiments in papers.values():
+        for exp in experiments:
+            for raw_material in exp.raw_materials.values():
+                add_enum(enum_by_class, raw_material.kind)
+
+            for synthesis_group in exp.synthesis_group_map.values():
+                for event in synthesis_group.process_events:
+                    add_enum(enum_by_class, event.kind)
+                    record_quantity_enums(event.temperature, enum_by_class)
+                    record_quantity_enums(event.duration, enum_by_class)
+
+            for description in exp.descriptions:
+                add_enum(enum_by_class, description.method)
+                for kind in description.kinds:
+                    add_enum(enum_by_class, kind)
+                    if isinstance(kind, str) and not isinstance(kind, Enum):
+                        string_categories.add(kind)
+
+            for material in exp.output_materials:
+                for item in material.measurements:
+                    record_measurement_item_enums(
+                        item,
+                        enum_by_class,
+                        string_categories,
+                        measurement_kind_values,
+                        measurement_kind_enums,
+                        measurement_kind_strings,
+                    )
+
+    return {
+        "enum_by_class": enum_by_class,
+        "string_categories": string_categories,
+        "measurement_kind_values": measurement_kind_values,
+        "measurement_kind_enums": measurement_kind_enums,
+        "measurement_kind_strings": measurement_kind_strings,
+    }
+
+
+def print_enum_usage_stats(enum_usage) -> None:
+    enum_by_class = enum_usage["enum_by_class"]
+    string_categories = enum_usage["string_categories"]
+    measurement_kind_values = enum_usage["measurement_kind_values"]
+    measurement_kind_enums = enum_usage["measurement_kind_enums"]
+    measurement_kind_strings = enum_usage["measurement_kind_strings"]
+    all_enum_members = {key for values in enum_by_class.values() for key in values}
+    enum_plus_string_count = len(all_enum_members) + len(string_categories)
+    enum_class_counts = ", ".join(
+        f"{enum_class}: {len(values)}" for enum_class, values in sorted(enum_by_class.items())
+    )
+
+    print("-" * 70)
+    print("CATEGORICAL SUMMARY")
+    print("-" * 70)
+    print(f"Unique enum + string categories: {enum_plus_string_count}")
+    print(f"Unique enum members: {len(all_enum_members)}")
+    print(f"Unique category strings: {len(string_categories)}")
+    print(f"Unique measurement kinds observed: {len(measurement_kind_values)}")
+    print(f"  Enum-backed measurement kinds: {len(measurement_kind_enums)}")
+    print(f"  Non-enum measurement kind strings: {len(measurement_kind_strings)}")
+    print(f"Enum class counts: {enum_class_counts}")
+    print()
 
 
 def get_compositions(material):
@@ -115,6 +259,32 @@ def main():
     print(f"Total papers: {total_papers}")
     print(f"Total experiments: {total_experiments}")
     print(f"Total materials: {total_materials}")
+    print()
+
+    enum_usage = collect_enum_usage()
+    print_enum_usage_stats(enum_usage)
+
+    print("-" * 70)
+    print("EXTRACTION STRUCTURE SUMMARY")
+    print("-" * 70)
+    unique_compositions = {
+        comp
+        for experiments in papers.values()
+        for exp in experiments
+        for material in exp.output_materials
+        for comp in get_compositions(material)
+    }
+    duplicate_composition_groups = sum(len(groups) for groups in papers_with_dup_comps.values())
+    derived_materials_count = sum(len(items) for items in papers_with_derived.values())
+
+    print(f"Unique compositions: {len(unique_compositions)}")
+    print(f"Total measurements (non-comp, non-lattice): {total_measurements}")
+    print(f"Grouped measurements: {total_grouped_measurements} in {total_groups} groups")
+    print(f"Papers with duplicate compositions: {len(papers_with_dup_comps)} / {total_papers}")
+    print(f"Duplicate composition groups: {duplicate_composition_groups}")
+    print(f"Papers with derived materials: {len(papers_with_derived)} / {total_papers}")
+    print(f"Derived materials: {derived_materials_count}")
+    print(f"Papers with grouped measurements: {len(papers_with_grouped)} / {total_papers}")
     print()
 
     # Stat 1
