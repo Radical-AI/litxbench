@@ -5,7 +5,7 @@ from pydantic_ai.usage import RunUsage
 
 _GPT_MODEL_REF_MAP: dict[str, str] = {
     "gpt-5-medium": "gpt-5",
-    "gpt-5-pro-high": "gpt-5",
+    "gpt-5-pro-high": "gpt-5-pro",
     "gpt-5-1-low": "gpt-5-1",
     "gpt-5-1-medium": "gpt-5-1",
     "gpt-5-2-medium": "gpt-5-2",
@@ -31,10 +31,10 @@ def resolve_genai_price_params(config_model_name: str) -> tuple[str, str] | None
         return _GEMINI_MODEL_REF_MAP[config_model_name], "google"
     if config_model_name.startswith("gemini-"):
         return config_model_name, "google"
-    if config_model_name.startswith("gpt-5"):
-        return "gpt-5", "openai"
     if config_model_name in _GPT_MODEL_REF_MAP:
         return _GPT_MODEL_REF_MAP[config_model_name], "openai"
+    if config_model_name.startswith("gpt-5"):
+        return "gpt-5", "openai"
     return None
 
 
