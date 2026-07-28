@@ -39,6 +39,8 @@ class ExtractionOutput:
     prompt_text: str = ""
     raw_response: str = ""
     input_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
     output_tokens: int = 0
     cost_usd: float = 0.0
     attempts: int = 1
@@ -66,6 +68,8 @@ def _format_metrics_row(
     num_matched_materials: int,
     avg_ped: float,
     input_tokens: int,
+    cache_read_tokens: int,
+    cache_write_tokens: int,
     output_tokens: int,
     cost_usd: float,
     avg_attempts: float,
@@ -87,6 +91,8 @@ def _format_metrics_row(
         "num_matched_materials": num_matched_materials,
         "avg_process_edit_distance": f"{avg_ped:.4f}",
         "input_tokens": input_tokens,
+        "cache_read_tokens": cache_read_tokens,
+        "cache_write_tokens": cache_write_tokens,
         "output_tokens": output_tokens,
         "cost_usd": f"{cost_usd:.6f}",
         "avg_attempts": f"{avg_attempts:.2f}",
@@ -144,6 +150,8 @@ def write_run_meta(
     for doi, eo in extraction_outputs.items():
         meta[doi] = {
             "input_tokens": eo.input_tokens,
+            "cache_read_tokens": eo.cache_read_tokens,
+            "cache_write_tokens": eo.cache_write_tokens,
             "output_tokens": eo.output_tokens,
             "cost_usd": eo.cost_usd,
             "attempts": eo.attempts,
@@ -187,6 +195,8 @@ def _write_results_csv(
         all_target_materials = 0
         all_extracted_materials = 0
         total_input_tokens = 0
+        total_cache_read_tokens = 0
+        total_cache_write_tokens = 0
         total_output_tokens = 0
         total_cost_usd = 0.0
         all_ped_values: list[float] = []
@@ -202,6 +212,8 @@ def _write_results_csv(
             eo = extraction_outputs.get(doi)
             ped = avg_process_edit_distance(r)
             in_tok = eo.input_tokens if eo else 0
+            cache_read_tok = eo.cache_read_tokens if eo else 0
+            cache_write_tok = eo.cache_write_tokens if eo else 0
             out_tok = eo.output_tokens if eo else 0
             cost = eo.cost_usd if eo else 0.0
             doi_att = eo.attempts if eo else 1
@@ -220,6 +232,8 @@ def _write_results_csv(
                 num_matched_materials=r.num_matched_materials,
                 avg_ped=ped,
                 input_tokens=in_tok,
+                cache_read_tokens=cache_read_tok,
+                cache_write_tokens=cache_write_tok,
                 output_tokens=out_tok,
                 cost_usd=cost,
                 avg_attempts=float(doi_att),
@@ -238,6 +252,8 @@ def _write_results_csv(
             all_target_materials += r.num_target_materials
             all_extracted_materials += r.num_extracted_materials
             total_input_tokens += in_tok
+            total_cache_read_tokens += cache_read_tok
+            total_cache_write_tokens += cache_write_tok
             total_output_tokens += out_tok
             total_cost_usd += cost
             doi_attempts_list.append(doi_att)
@@ -260,6 +276,8 @@ def _write_results_csv(
             num_matched_materials=all_matched_materials,
             avg_ped=overall_ped,
             input_tokens=total_input_tokens,
+            cache_read_tokens=total_cache_read_tokens,
+            cache_write_tokens=total_cache_write_tokens,
             output_tokens=total_output_tokens,
             cost_usd=total_cost_usd,
             avg_attempts=csv_avg_attempts,
@@ -297,6 +315,8 @@ def _write_results_csv(
             "num_matched_materials",
             "avg_process_edit_distance",
             "input_tokens",
+            "cache_read_tokens",
+            "cache_write_tokens",
             "output_tokens",
             "cost_usd",
             "elapsed_seconds",
@@ -416,6 +436,8 @@ def _evaluate_and_report(
     all_target_materials = 0
     all_extracted_materials = 0
     all_input_tokens = 0
+    all_cache_read_tokens = 0
+    all_cache_write_tokens = 0
     all_output_tokens = 0
     all_cost_usd = 0.0
     all_attempts: list[int] = []
@@ -433,6 +455,8 @@ def _evaluate_and_report(
 
         # ped = avg_process_edit_distance(result)
         doi_in_tok = extraction_output.input_tokens if extraction_output else 0
+        doi_cache_read_tok = extraction_output.cache_read_tokens if extraction_output else 0
+        doi_cache_write_tok = extraction_output.cache_write_tokens if extraction_output else 0
         doi_out_tok = extraction_output.output_tokens if extraction_output else 0
         doi_cost = extraction_output.cost_usd if extraction_output else 0.0
         doi_attempts = extraction_output.attempts if extraction_output else 0
@@ -459,6 +483,8 @@ def _evaluate_and_report(
         all_target_materials += result.num_target_materials
         all_extracted_materials += result.num_extracted_materials
         all_input_tokens += doi_in_tok
+        all_cache_read_tokens += doi_cache_read_tok
+        all_cache_write_tokens += doi_cache_write_tok
         all_output_tokens += doi_out_tok
         all_cost_usd += doi_cost
         all_attempts.append(doi_attempts)
@@ -506,6 +532,8 @@ def _evaluate_and_report(
         num_matched_materials=all_matched_materials,
         avg_ped=overall_ped,
         input_tokens=all_input_tokens,
+        cache_read_tokens=all_cache_read_tokens,
+        cache_write_tokens=all_cache_write_tokens,
         output_tokens=all_output_tokens,
         cost_usd=all_cost_usd,
         avg_attempts=avg_attempts,
@@ -775,6 +803,8 @@ SUMMARY_CSV_KEYS = [
     "num_matched_materials",
     "avg_process_edit_distance",
     "input_tokens",
+    "cache_read_tokens",
+    "cache_write_tokens",
     "output_tokens",
     "cost_usd",
     "elapsed_seconds",

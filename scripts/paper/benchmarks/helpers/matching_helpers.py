@@ -57,6 +57,8 @@ class MatchingOutput:
     prompt_text: str = ""
     raw_response: str = ""
     input_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
     output_tokens: int = 0
     cost_usd: float = 0.0
     elapsed_seconds: float = 0.0
@@ -465,8 +467,16 @@ async def _matching_worker(
         prompt_text=prompt,
         raw_response=raw_response,
         input_tokens=usage.input_tokens,
+        cache_read_tokens=usage.cache_read_tokens,
+        cache_write_tokens=usage.cache_write_tokens,
         output_tokens=usage.output_tokens,
-        cost_usd=compute_cost(model_name, usage.input_tokens, usage.output_tokens),
+        cost_usd=compute_cost(
+            model_name,
+            usage.input_tokens,
+            usage.output_tokens,
+            cache_read_tokens=usage.cache_read_tokens,
+            cache_write_tokens=usage.cache_write_tokens,
+        ),
         elapsed_seconds=elapsed,
     )
     return doi, output

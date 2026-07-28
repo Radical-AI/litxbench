@@ -74,6 +74,8 @@ class CompositionExtractionOutput:
     prompt_text: str
     raw_response: str
     input_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
     output_tokens: int = 0
     cost_usd: float = 0.0
 
@@ -435,6 +437,8 @@ async def _extract_compositions_zero_shot(
                 prompt_text=f"{system_prompt}\n<paper_text>",
                 raw_response=raw_response,
                 input_tokens=usage.input_tokens,
+                cache_read_tokens=usage.cache_read_tokens,
+                cache_write_tokens=usage.cache_write_tokens,
                 output_tokens=usage.output_tokens,
             )
 
@@ -457,6 +461,8 @@ async def _extract_compositions_zero_shot(
         prompt_text=f"{system_prompt}\n<paper_text>",
         raw_response=raw_response,
         input_tokens=usage.input_tokens,
+        cache_read_tokens=usage.cache_read_tokens,
+        cache_write_tokens=usage.cache_write_tokens,
         output_tokens=usage.output_tokens,
     )
 
@@ -468,7 +474,13 @@ async def _extract_compositions_worker(
     model = get_model_from_name(model_provider, config.model_name)
     extraction_agent = Agent(model=model, retries=3)
     output = await _extract_compositions_zero_shot(doi, extraction_agent, config)
-    output.cost_usd = compute_cost(config.model_name, output.input_tokens, output.output_tokens)
+    output.cost_usd = compute_cost(
+        config.model_name,
+        output.input_tokens,
+        output.output_tokens,
+        cache_read_tokens=output.cache_read_tokens,
+        cache_write_tokens=output.cache_write_tokens,
+    )
     return doi, output
 
 
@@ -552,6 +564,8 @@ COMPOSITION_CSV_KEYS = [
     "recall",
     "f1",
     "input_tokens",
+    "cache_read_tokens",
+    "cache_write_tokens",
     "output_tokens",
     "cost_usd",
     "elapsed_seconds",
@@ -593,6 +607,8 @@ def run_composition_benchmark(
         all_target = 0
         all_extracted = 0
         all_input_tokens = 0
+        all_cache_read_tokens = 0
+        all_cache_write_tokens = 0
         all_output_tokens = 0
         all_cost_usd = 0.0
         comparison_results: dict[str, CompositionComparisonResult] = {}
@@ -606,6 +622,8 @@ def run_composition_benchmark(
             print_composition_comparison(doi, result, extraction_output)
 
             in_tok = extraction_output.input_tokens if extraction_output else 0
+            cache_read_tok = extraction_output.cache_read_tokens if extraction_output else 0
+            cache_write_tok = extraction_output.cache_write_tokens if extraction_output else 0
             out_tok = extraction_output.output_tokens if extraction_output else 0
             cost = extraction_output.cost_usd if extraction_output else 0.0
 
@@ -620,6 +638,8 @@ def run_composition_benchmark(
                     "recall": f"{result.recall:.4f}",
                     "f1": f"{result.f1:.4f}",
                     "input_tokens": in_tok,
+                    "cache_read_tokens": cache_read_tok,
+                    "cache_write_tokens": cache_write_tok,
                     "output_tokens": out_tok,
                     "cost_usd": f"{cost:.6f}",
                 }
@@ -629,6 +649,8 @@ def run_composition_benchmark(
             all_target += result.num_target
             all_extracted += result.num_extracted
             all_input_tokens += in_tok
+            all_cache_read_tokens += cache_read_tok
+            all_cache_write_tokens += cache_write_tok
             all_output_tokens += out_tok
             all_cost_usd += cost
 
@@ -654,6 +676,8 @@ def run_composition_benchmark(
                 "recall": f"{overall_r:.4f}",
                 "f1": f"{overall_f1:.4f}",
                 "input_tokens": all_input_tokens,
+                "cache_read_tokens": all_cache_read_tokens,
+                "cache_write_tokens": all_cache_write_tokens,
                 "output_tokens": all_output_tokens,
                 "cost_usd": f"{all_cost_usd:.6f}",
                 "elapsed_seconds": f"{elapsed:.1f}",
