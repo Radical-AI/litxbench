@@ -48,7 +48,13 @@ class ExperimentBenchmarkConfig(BaseBenchmarkConfig):
 def finalize_output(output: Any, model_name: str, start_time: float) -> None:
     """Set ``elapsed_seconds`` and ``cost_usd`` on an extraction output in-place."""
     output.elapsed_seconds = time.monotonic() - start_time
-    output.cost_usd = compute_cost(model_name, output.input_tokens, output.output_tokens)
+    output.cost_usd = compute_cost(
+        model_name,
+        output.input_tokens,
+        output.output_tokens,
+        cache_read_tokens=output.cache_read_tokens,
+        cache_write_tokens=output.cache_write_tokens,
+    )
 
 
 def run_standard_benchmark(

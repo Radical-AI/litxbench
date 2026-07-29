@@ -42,7 +42,14 @@ def resolve_genai_price_params(config_model_name: str) -> tuple[str, str]:
     raise ValueError(f"No pricing mapping for model name: {config_model_name!r}")
 
 
-def compute_cost(model_name: str, input_tokens: int, output_tokens: int) -> float:
+def compute_cost(
+    model_name: str,
+    input_tokens: int,
+    output_tokens: int,
+    *,
+    cache_read_tokens: int = 0,
+    cache_write_tokens: int = 0,
+) -> float:
     """Compute USD cost for a model invocation.
 
     Raises ``ValueError`` for unknown model names; returns 0.0 if the price
@@ -50,7 +57,12 @@ def compute_cost(model_name: str, input_tokens: int, output_tokens: int) -> floa
     """
     price_params = resolve_genai_price_params(model_name)
     try:
-        usage = RunUsage(input_tokens=input_tokens, output_tokens=output_tokens)
+        usage = RunUsage(
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            cache_read_tokens=cache_read_tokens,
+            cache_write_tokens=cache_write_tokens,
+        )
         price = calc_price(usage, price_params[0], provider_id=price_params[1])
         return float(price.total_price)
     except Exception:

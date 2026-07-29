@@ -327,6 +327,8 @@ async def _extract_two_stage(
 
     # Combine token counts
     total_input = stage1_usage.input_tokens + stage2_usage.input_tokens
+    total_cache_read = stage1_usage.cache_read_tokens + stage2_usage.cache_read_tokens
+    total_cache_write = stage1_usage.cache_write_tokens + stage2_usage.cache_write_tokens
     total_output = stage1_usage.output_tokens + stage2_usage.output_tokens
 
     # Build combined raw_response showing both stages
@@ -345,6 +347,8 @@ async def _extract_two_stage(
         prompt_text="\n".join(prompt_lines),
         raw_response=combined_raw,
         input_tokens=total_input,
+        cache_read_tokens=total_cache_read,
+        cache_write_tokens=total_cache_write,
         output_tokens=total_output,
         context_resets=stage2_context_resets,
     )

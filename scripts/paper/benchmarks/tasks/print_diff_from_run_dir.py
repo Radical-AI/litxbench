@@ -27,6 +27,7 @@ from litxbench.litxalloy import papers
 from scripts.paper.benchmarks.helpers.block_extraction import extract_json_block, extract_python_code_block
 from scripts.paper.benchmarks.helpers.code_execution import execute_experiments_code
 from scripts.paper.benchmarks.helpers.json_to_experiments import parse_and_construct
+from scripts.paper.benchmarks.helpers.pricing import compute_cost
 from scripts.paper.benchmarks.helpers.reporting import (
     ExtractionOutput,
     evaluate_all_and_summarize,
@@ -239,8 +240,21 @@ def print_diff_from_run_dir(run_dir: Path) -> None:
         if doi in extraction_outputs:
             eo = extraction_outputs[doi]
             eo.input_tokens = meta.get("input_tokens", 0)
+            eo.cache_read_tokens = meta.get("cache_read_tokens", 0)
+            eo.cache_write_tokens = meta.get("cache_write_tokens", 0)
             eo.output_tokens = meta.get("output_tokens", 0)
-            eo.cost_usd = meta.get("cost_usd", 0.0)
+            if model_name.startswith("gpt-5") and (
+                "cache_read_tokens" in meta or "cache_write_tokens" in meta
+            ):
+                eo.cost_usd = compute_cost(
+                    model_name,
+                    eo.input_tokens,
+                    eo.output_tokens,
+                    cache_read_tokens=eo.cache_read_tokens,
+                    cache_write_tokens=eo.cache_write_tokens,
+                )
+            else:
+                eo.cost_usd = meta.get("cost_usd", 0.0)
             eo.attempts = meta.get("attempts", 1)
 
     ground_truth = {doi: papers[doi] for doi in dois}

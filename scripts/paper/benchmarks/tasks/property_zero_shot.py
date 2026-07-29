@@ -108,6 +108,8 @@ class PropertyExtractionOutput:
     prompt_text: str
     raw_response: str
     input_tokens: int = 0
+    cache_read_tokens: int = 0
+    cache_write_tokens: int = 0
     output_tokens: int = 0
     cost_usd: float = 0.0
 
@@ -299,6 +301,8 @@ async def _extract_property_zero_shot(
         prompt_text="\n".join(prompt),
         raw_response=raw_response,
         input_tokens=usage.input_tokens,
+        cache_read_tokens=usage.cache_read_tokens,
+        cache_write_tokens=usage.cache_write_tokens,
         output_tokens=usage.output_tokens,
     )
 
@@ -324,7 +328,13 @@ async def extract_properties_zero_shot(
         async with semaphore:
             extraction_agent = Agent(model=model, retries=3, model_settings={"timeout": 120})
             output = await _extract_property_zero_shot(doi, prop_name, prop_def, extraction_agent)
-            output.cost_usd = compute_cost(config.model_name, output.input_tokens, output.output_tokens)
+            output.cost_usd = compute_cost(
+                config.model_name,
+                output.input_tokens,
+                output.output_tokens,
+                cache_read_tokens=output.cache_read_tokens,
+                cache_write_tokens=output.cache_write_tokens,
+            )
             return doi, prop_name, output
 
     tasks = [_run_one(doi, pn, pd) for pn, pd in prop_defs.items() for doi in dois]
@@ -438,6 +448,8 @@ PROPERTY_CSV_KEYS = [
     "recall",
     "f1",
     "input_tokens",
+    "cache_read_tokens",
+    "cache_write_tokens",
     "output_tokens",
     "cost_usd",
 ]
@@ -494,6 +506,8 @@ def run_property_benchmark(
         grand_target = 0
         grand_extracted = 0
         grand_input_tokens = 0
+        grand_cache_read_tokens = 0
+        grand_cache_write_tokens = 0
         grand_output_tokens = 0
         grand_cost = 0.0
 
@@ -506,6 +520,8 @@ def run_property_benchmark(
             prop_target = 0
             prop_extracted = 0
             prop_input_tokens = 0
+            prop_cache_read_tokens = 0
+            prop_cache_write_tokens = 0
             prop_output_tokens = 0
             prop_cost = 0.0
 
@@ -520,6 +536,8 @@ def run_property_benchmark(
                     print_property_comparison(doi, prop_name, result, eo)
 
                 in_tok = eo.input_tokens if eo else 0
+                cache_read_tok = eo.cache_read_tokens if eo else 0
+                cache_write_tok = eo.cache_write_tokens if eo else 0
                 out_tok = eo.output_tokens if eo else 0
                 cost = eo.cost_usd if eo else 0.0
 
@@ -535,6 +553,8 @@ def run_property_benchmark(
                         "recall": f"{result.recall:.4f}",
                         "f1": f"{result.f1:.4f}",
                         "input_tokens": in_tok,
+                        "cache_read_tokens": cache_read_tok,
+                        "cache_write_tokens": cache_write_tok,
                         "output_tokens": out_tok,
                         "cost_usd": f"{cost:.6f}",
                     }
@@ -544,6 +564,8 @@ def run_property_benchmark(
                 prop_target += result.num_target
                 prop_extracted += result.num_extracted
                 prop_input_tokens += in_tok
+                prop_cache_read_tokens += cache_read_tok
+                prop_cache_write_tokens += cache_write_tok
                 prop_output_tokens += out_tok
                 prop_cost += cost
 
@@ -570,6 +592,8 @@ def run_property_benchmark(
                     "recall": f"{overall_r:.4f}",
                     "f1": f"{overall_f1:.4f}",
                     "input_tokens": prop_input_tokens,
+                    "cache_read_tokens": prop_cache_read_tokens,
+                    "cache_write_tokens": prop_cache_write_tokens,
                     "output_tokens": prop_output_tokens,
                     "cost_usd": f"{prop_cost:.6f}",
                 }
@@ -579,6 +603,8 @@ def run_property_benchmark(
             grand_target += prop_target
             grand_extracted += prop_extracted
             grand_input_tokens += prop_input_tokens
+            grand_cache_read_tokens += prop_cache_read_tokens
+            grand_cache_write_tokens += prop_cache_write_tokens
             grand_output_tokens += prop_output_tokens
             grand_cost += prop_cost
 

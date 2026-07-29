@@ -9,7 +9,7 @@ import pytest
 pytest.importorskip("genai_prices")
 pytest.importorskip("pydantic_ai")
 
-from scripts.paper.benchmarks.helpers.pricing import resolve_genai_price_params  # noqa: E402
+from scripts.paper.benchmarks.helpers.pricing import compute_cost, resolve_genai_price_params  # noqa: E402
 
 
 @pytest.mark.parametrize(
@@ -55,3 +55,16 @@ def test_gpt5_variants_are_not_all_billed_at_base_rate() -> None:
         for name in ("gpt-5-mini-medium", "gpt-5-2-high", "gpt-5-pro-high")
     }
     assert set(refs.values()) == {"gpt-5-mini", "gpt-5-2", "gpt-5-pro"}
+
+
+def test_compute_cost_applies_cached_input_rate() -> None:
+    uncached = compute_cost("gpt-5-mini-medium", input_tokens=1_000, output_tokens=0)
+    half_cached = compute_cost(
+        "gpt-5-mini-medium",
+        input_tokens=1_000,
+        output_tokens=0,
+        cache_read_tokens=500,
+    )
+
+    assert uncached == pytest.approx(0.00025)
+    assert half_cached == pytest.approx(0.0001375)

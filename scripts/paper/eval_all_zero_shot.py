@@ -20,6 +20,7 @@ from pathlib import Path
 from scipy.stats import t as t_dist
 
 from scripts.paper.benchmarks.tasks.print_diff_from_run_dir import print_diff_from_run_dir
+from scripts.paper.pareto_front import generate_pareto_plot
 
 PAPER_DIR = Path(__file__).resolve().parent
 
@@ -55,7 +56,7 @@ def eval_and_combine(run_dirs: list[Path], combined_csv: Path) -> None:
         return
 
     with open(combined_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(all_rows)
 
@@ -336,7 +337,7 @@ def build_zero_shot_summary_with_ci(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=SUMMARY_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=SUMMARY_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -381,7 +382,7 @@ def build_json_vs_code_csv(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=JSON_VS_CODE_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=JSON_VS_CODE_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -422,7 +423,7 @@ def build_assemble_graph_csv(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=ASSEMBLE_GRAPH_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=ASSEMBLE_GRAPH_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -472,7 +473,7 @@ def build_process_f1_csv(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=PROCESS_F1_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=PROCESS_F1_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -538,7 +539,7 @@ def build_property_summary_csv(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=PROPERTY_SUMMARY_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=PROPERTY_SUMMARY_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -628,7 +629,7 @@ def build_composition_summary_csv(
         return
 
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=COMPOSITION_FIELDS, delimiter="\t")
+        writer = csv.DictWriter(f, fieldnames=COMPOSITION_FIELDS, delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -706,6 +707,11 @@ def _eval_manifest(manifest: dict, out_dir: Path) -> None:
         build_process_f1_csv(
             combined_csvs_by_method,
             out_csv=out_dir / "process_f1_summary.csv",
+        )
+        generate_pareto_plot(
+            summary_path=out_dir / "zero_shot_summary_with_ci.csv",
+            pdf_path=PAPER_DIR / "pareto_front.pdf",
+            png_path=PAPER_DIR.parent.parent / "docs" / "_static" / "pareto_front.png",
         )
 
 

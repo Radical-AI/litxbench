@@ -338,6 +338,8 @@ async def _extract_assemble_graph(
         prompt_text="\n".join(prompt),
         raw_response=result.raw_response,
         input_tokens=result.usage.input_tokens,
+        cache_read_tokens=result.usage.cache_read_tokens,
+        cache_write_tokens=result.usage.cache_write_tokens,
         output_tokens=result.usage.output_tokens,
         attempts=result.attempts,
         context_resets=result.context_resets,
