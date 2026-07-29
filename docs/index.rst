@@ -113,7 +113,7 @@ LitXBench
        <td>0.49</td>
        <td>1.39</td>
        <td>3.36</td>
-       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1hLahFPqZLsAGYkdD9Q3kYcZSGA5IoDNm/view">run</a> <a href="https://openai.com/index/introducing-gpt-5-2/">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
+       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1mDTuADZjpymmOIwQWz1D3UUeEoTD3gwG/view?usp=sharing">run</a> <a href="https://openai.com/index/introducing-gpt-5-2/">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
        <td>0.1.2</td>
      </tr>
      <tr>
@@ -155,7 +155,7 @@ LitXBench
        <td>0.44</td>
        <td>2.54</td>
        <td>0.55</td>
-       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1hLahFPqZLsAGYkdD9Q3kYcZSGA5IoDNm/view">run</a> <a href="https://openai.com/index/introducing-gpt-5/">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
+       <td class="links-cell"><a href="https://github.com/Radical-AI/litxbench/blob/main/scripts/paper/benchmarks/tasks/zero_shot.py">code</a> <a href="https://drive.google.com/file/d/1mDTuADZjpymmOIwQWz1D3UUeEoTD3gwG/view?usp=sharing">run</a> <a href="https://openai.com/index/introducing-gpt-5/">paper</a> <a href="https://github.com/Radical-AI/litxbench/pull/4">pr</a></td>
        <td>0.1.2</td>
      </tr>
      <tr>
